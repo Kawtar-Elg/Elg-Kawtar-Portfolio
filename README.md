@@ -1,4 +1,4 @@
-# ✨ EL GADDI KAWTAR — Portfolio ✨
+# ✨ ELG KAWTAR — Portfolio ✨
 
 <div align="center">
 
@@ -14,7 +14,7 @@
 ---
 
 ## 👋 About Me
-Hi, I’m **El Gaddi Kawtar** — a **Web & Mobile Developer**, **Graphic Designer** .  
+Hi, I’m **ElG Kawtar** — a **Web & Mobile Developer**, **Graphic Designer** .  
 I create modern applications with beautiful UI, strong performance, and a focus on user experience.  
 I’m also passionate about **robotics and IoT**, blending technology with creativity.
 
