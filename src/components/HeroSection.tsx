@@ -41,24 +41,22 @@ const HeroSection = () => {
                   <span className="text-foreground">El Gaddi</span>
                 </h1>
                 <h3 className="text-2xl lg:text-3xl text-foreground/80 font-light">
-                  Creative Developer & Robotics Enthusiast
+                  Tech Dreamer, Code Maker, Design Shaper
                 </h3>
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Passionate about crafting innovative digital experiences through web development, 
-                mobile apps, and creative design. With a deep love for robotics and emerging technologies, 
-                I bring creativity, leadership, and technical excellence to every project.
+                I'm | Kawtar El Gaddi — the creative mind who blends web & mobile development, graphic design, and robotics passion into powerful solutions. I lead with vision, design with originality, and build with unstoppable energy.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="lg" className="group">
-                  Get Started
+                    Let’s start the magic
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button variant="glass" size="lg" className="group">
                   <Play className="w-5 h-5" />
-                  Watch Intro
+                 Relax, your project is in safe and creative hands !
                 </Button>
               </div>
 
@@ -66,7 +64,7 @@ const HeroSection = () => {
               <div className="flex space-x-8 pt-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold gradient-text">3+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <div className="text-sm text-muted-foreground">Years Experience in Design</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold gradient-text">50+</div>

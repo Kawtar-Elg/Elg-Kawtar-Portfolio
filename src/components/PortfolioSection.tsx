@@ -9,39 +9,30 @@ const PortfolioSection = () => {
 
   const projects = [
   
-    {
-      id: 1,
-      title: "Fitness Tracking App",
-      category: "Mobile",
-      description: "Cross-platform mobile app for tracking workouts and health metrics.",
-      technologies: ["React Native", "Firebase", "Redux", "Charts"],
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
+   
     
     {
-      id: 2,
-      title: "Smart Home Robot",
+      id: 1,
+      title: "Robotic_Club_CMC",
       category: "Robotics",
-      description: "Autonomous robot for home automation and security monitoring.",
-      technologies: ["Arduino", "Python", "IoT", "Computer Vision"],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop",
+      description: "Robotics Club CMC – a student community passionate about robotics, AI, and innovation.",
+      technologies: ["html", "css", "bootstrap", "java Script"],
+      image: "src/assets/rbtc.png",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      id: 3,
+      id: 2,
       title: "Alf-Layla ",
       category: "Web",
-      description: "Responsive portfolio website with modern design and smooth animations.",
-      technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
+      description: "Propose a simple, modern, and intuitive digital solution that allows users to book luxury accommodations in just a few clicks.",
+      technologies: ["html", "css", "bootstrap ", "python"],
       image: "src/assets/1.png",
       liveUrl: "alf-layla.great-site.net",
       githubUrl: "#"
     },
     {
-      id: 4,
+      id: 3,
       title: "Portfolio Website",
       category: "Web",
       description: "Responsive portfolio website with modern design and smooth animations.",
@@ -52,13 +43,35 @@ const PortfolioSection = () => {
     }
     ,
     {
-      id: 5,
-      title: "Task Management App",
+      id: 4,
+      title: "Managemt app",
       category: "Mobile",
-      description: "Intuitive task management app with team collaboration features.",
-      technologies: ["Flutter", "Dart", "SQLite", "Push Notifications"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      description: "Gérez votre hamam en toute simplicité !",
+      technologies: ["Kotlin", "jetbrain", "flutter ", "react"],
+      image: "src/assets/appvers.png",
       liveUrl: "#",
+      githubUrl: "#"
+    }
+    ,
+     {
+      id: 5,
+      title: "Managemt app",
+      category: "descktop",
+      description: "Gérez votre hamam en toute simplicité !",
+      technologies: ["python", "flask", "tikinter"],
+      image: "src/assets/appvers (2).png",
+      liveUrl: "#",
+      githubUrl: "#"
+    }
+    ,
+    {
+      id: 6,
+      title: "CRUD Operations Web App",
+      category: "Web",
+      description: " A project developed with passion by Wiam and Kawtar.",
+      technologies: ["Flutter", "Dart", "SQLite", "Push Notifications"],
+      image: "src/assets/management.png",
+      liveUrl: "http://user-management-system-eosin.vercel.app/",
       githubUrl: "#"
     }
   ];
@@ -208,10 +221,12 @@ const PortfolioSection = () => {
 
         {/* Load More Section */}
         <div className="text-center mt-12">
+          <a href="https://github.com/Kawtar-Elg" target="_blank" rel="noopener noreferrer" className="flex-1">
           <Button variant="hero" size="lg">
             View All Projects
             <ExternalLink className="w-5 h-5" />
           </Button>
+          </a>
         </div>
       </div>
     </section>

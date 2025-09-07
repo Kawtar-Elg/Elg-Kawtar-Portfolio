@@ -30,13 +30,13 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "kawtar.elgaddi@example.com",
+      value: "elgaddi13@gmail.com",
       link: "mailto:kawtar.elgaddi@example.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+212 66666666",
       link: "tel:+15551234567"
     },
     {
@@ -48,9 +48,9 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github className="w-6 h-6" />, name: "GitHub", url: "#" },
-    { icon: <Linkedin className="w-6 h-6" />, name: "LinkedIn", url: "#" },
-    { icon: <Twitter className="w-6 h-6" />, name: "Twitter", url: "#" }
+    { icon: <Github className="w-6 h-6" />, name: "GitHub", url: "https://github.com/Kawtar-Elg" },
+    { icon: <Linkedin className="w-6 h-6" />, name: "LinkedIn", url: "https://www.linkedin.com/in/kawtar-elg-5924402b9/" },
+    
   ];
 
   return (

@@ -26,17 +26,17 @@ const AboutSection = () => {
 
   const timeline = [
     {
-      year: "2024",
-      title: "Senior Developer",
+      year: "2025",
+      title: "Junior Developer",
       description: "Leading innovative projects in web and mobile development"
     },
     {
-      year: "2023",
+      year: "2024-2025",
       title: "Robotics Explorer",
       description: "Expanded into robotics and AI-driven solutions"
     },
     {
-      year: "2022",
+      year: "2021-2025",
       title: "Creative Designer",
       description: "Mastered UI/UX and graphic design principles"
     },
