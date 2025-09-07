@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# ✨ EL GADDI KAWTAR — Portfolio ✨
 
-## Project info
+<div align="center">
 
-**URL**: https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
 
-## How can I edit this code?
+*A modern, responsive portfolio showcasing my work in web, mobile, and design.*
 
-There are several ways of editing your application.
+</div>
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84) and start prompting.
+## 👋 About Me
+Hi, I’m **El Gaddi Kawtar** — a **Web & Mobile Developer**, **Graphic Designer** .  
+I create modern applications with beautiful UI, strong performance, and a focus on user experience.  
+I’m also passionate about **robotics and IoT**, blending technology with creativity.
 
-Changes made via Lovable will be committed automatically to this repo.
+**Languages I speak:** Arabic | French | English
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎯 Skills & Expertise
+- **Web Development**: React, TypeScript, Vite, Tailwind CSS, shadcn-ui  
+- **Mobile Development**: Native Android with Kotlin  
+- **Backend & Databases**: PHP (PDO), MySQL, PostgreSQL  
+- **Desktop Apps**: Electron, CustomTkinter (Python)  
+- **Design**: Graphic & UI/UX Design, branding  
+- **Other**: Arduino, IoT, automation prototypes  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🚀 Getting Started (for this portfolio)
+**Prerequisites**
+- Node.js 18+
+- npm 9+ / pnpm / yarn
+  
+## **🛠️ Tech Stack**
+<p align="center"> <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS"> <img src="https://img.shields.io/badge/Kotlin-0095D5?logo=kotlin&logoColor=white" alt="Kotlin"> </p>
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
