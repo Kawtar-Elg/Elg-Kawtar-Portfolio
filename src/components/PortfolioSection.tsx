@@ -8,18 +8,9 @@ const PortfolioSection = () => {
   const categories = ["All", "Web", "Mobile", "Design", "Robotics"];
 
   const projects = [
+  
     {
       id: 1,
-      title: "E-Commerce Platform",
-      category: "Web",
-      description: "A modern e-commerce platform with advanced features and seamless user experience.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 2,
       title: "Fitness Tracking App",
       category: "Mobile",
       description: "Cross-platform mobile app for tracking workouts and health metrics.",
@@ -28,18 +19,9 @@ const PortfolioSection = () => {
       liveUrl: "#",
       githubUrl: "#"
     },
+    
     {
-      id: 3,
-      title: "Brand Identity Design",
-      category: "Design",
-      description: "Complete brand identity design for a tech startup including logo and guidelines.",
-      technologies: ["Figma", "Illustrator", "Photoshop", "Branding"],
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 4,
+      id: 2,
       title: "Smart Home Robot",
       category: "Robotics",
       description: "Autonomous robot for home automation and security monitoring.",
@@ -49,17 +31,28 @@ const PortfolioSection = () => {
       githubUrl: "#"
     },
     {
-      id: 5,
+      id: 3,
+      title: "Alf-Layla ",
+      category: "Web",
+      description: "Responsive portfolio website with modern design and smooth animations.",
+      technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
+      image: "src/assets/1.png",
+      liveUrl: "alf-layla.great-site.net",
+      githubUrl: "#"
+    },
+    {
+      id: 4,
       title: "Portfolio Website",
       category: "Web",
       description: "Responsive portfolio website with modern design and smooth animations.",
       technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+      image: "src/assets/portfoliopic.png",
       liveUrl: "#",
       githubUrl: "#"
-    },
+    }
+    ,
     {
-      id: 6,
+      id: 5,
       title: "Task Management App",
       category: "Mobile",
       description: "Intuitive task management app with team collaboration features.",
@@ -132,14 +125,28 @@ const PortfolioSection = () => {
                   
                   {/* Project Actions */}
                   <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button variant="hero" size="sm">
-                      <Eye className="w-4 h-4" />
-                      View
-                    </Button>
+                   <a
+                      href="https://www.linkedin.com/posts/kawtar-elg-5924402b9_devweb-php-mysql-activity-7355033067910049792-DrEf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExqxz4Bf2G5wHituFJxh18P1Fz3w0omrR4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="hero" size="sm">
+                        <Eye className="w-4 h-4" />
+                        View
+                      </Button>
+                    </a>
+
+                   <a
+                    href="https://github.com/Kawtar-Elg/Alf-Laylaa.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button variant="glass" size="sm">
                       <Github className="w-4 h-4" />
                       Code
                     </Button>
+                  </a>
+
                   </div>
                 </div>
 
@@ -174,14 +181,24 @@ const PortfolioSection = () => {
 
                   {/* Project Links */}
                   <div className="flex space-x-3">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Button>
-                    <Button variant="ghost" size="sm" className="flex-1">
-                      <Github className="w-4 h-4" />
-                      Source
-                    </Button>
+                 <a href="https://alf-layla.great-site.net" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <Button variant="outline" size="sm" className="flex-1">
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </Button>
+                      </a>
+                   <a
+                        href="https://github.com/Kawtar-Elg/Alf-Laylaa.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button variant="ghost" size="sm" className="flex-1">
+                        <Github className="w-4 h-4" />
+                        Source
+                      </Button>
+                    </a>
+
                   </div>
                 </div>
               </div>

@@ -51,12 +51,14 @@ const Navigation = () => {
           </div>
 
           {/* Download CV Button */}
-          <div className="hidden md:block">
+        <div className="hidden md:block">
+          <a href="public/Kawtar-ELG-CV.pdf" download>
             <Button variant="hero" size="sm">
               <Download className="w-4 h-4" />
               Download CV
             </Button>
-          </div>
+          </a>
+        </div>
 
           {/* Mobile Menu Toggle */}
           <button
