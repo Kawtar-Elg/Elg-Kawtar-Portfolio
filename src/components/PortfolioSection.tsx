@@ -8,9 +8,6 @@ const PortfolioSection = () => {
   const categories = ["All", "Web", "Mobile", "Design", "Robotics"];
 
   const projects = [
-  
-   
-    
     {
       id: 1,
       title: "Robotic_Club_CMC",
@@ -18,8 +15,9 @@ const PortfolioSection = () => {
       description: "Robotics Club CMC – a student community passionate about robotics, AI, and innovation.",
       technologies: ["html", "css", "bootstrap", "java Script"],
       image: "src/assets/rbtc.png",
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
+      githubUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
+      viewUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0"
     },
     {
       id: 2,
@@ -28,8 +26,9 @@ const PortfolioSection = () => {
       description: "Propose a simple, modern, and intuitive digital solution that allows users to book luxury accommodations in just a few clicks.",
       technologies: ["html", "css", "bootstrap ", "python"],
       image: "src/assets/1.png",
-      liveUrl: "alf-layla.great-site.net",
-      githubUrl: "#"
+      liveUrl: "https://alf-layla.great-site.net",
+      githubUrl: "https://github.com/Kawtar-Elg/Alf-Laylaa.git",
+      viewUrl: "https://www.linkedin.com/posts/kawtar-elg-5924402b9_devweb-php-mysql-activity-7355033067910049792-DrEf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExqxz4Bf2G5wHituFJxh18P1Fz3w0omrR4"
     },
     {
       id: 3,
@@ -38,10 +37,10 @@ const PortfolioSection = () => {
       description: "Responsive portfolio website with modern design and smooth animations.",
       technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
       image: "src/assets/portfoliopic.png",
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-    ,
+      liveUrl: "https://github.com/Kawtar-Elg",
+      githubUrl: "https://github.com/Kawtar-Elg",
+      viewUrl: "https://github.com/Kawtar-Elg"
+    },
     {
       id: 4,
       title: "Managemt app",
@@ -49,21 +48,21 @@ const PortfolioSection = () => {
       description: "Gérez votre hamam en toute simplicité !",
       technologies: ["Kotlin", "jetbrain", "flutter ", "react"],
       image: "src/assets/appvers.png",
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-    ,
-     {
+      liveUrl: "https://github.com/Kawtar-Elg",
+      githubUrl: "https://github.com/Kawtar-Elg",
+      viewUrl: "https://github.com/Kawtar-Elg"
+    },
+    {
       id: 5,
       title: "Managemt app",
       category: "descktop",
       description: "Gérez votre hamam en toute simplicité !",
       technologies: ["python", "flask", "tikinter"],
       image: "src/assets/appvers (2).png",
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-    ,
+      liveUrl: "https://github.com/Kawtar-Elg",
+      githubUrl: "https://github.com/Kawtar-Elg",
+      viewUrl: "https://github.com/Kawtar-Elg"
+    },
     {
       id: 6,
       title: "CRUD Operations Web App",
@@ -72,7 +71,8 @@ const PortfolioSection = () => {
       technologies: ["Flutter", "Dart", "SQLite", "Push Notifications"],
       image: "src/assets/management.png",
       liveUrl: "http://user-management-system-eosin.vercel.app/",
-      githubUrl: "#"
+      githubUrl: "https://github.com/Kawtar-Elg/User-Management-System.git",
+      viewUrl: "http://user-management-system-eosin.vercel.app/"
     }
   ];
 
@@ -138,28 +138,31 @@ const PortfolioSection = () => {
                   
                   {/* Project Actions */}
                   <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <a
-                      href="https://www.linkedin.com/posts/kawtar-elg-5924402b9_devweb-php-mysql-activity-7355033067910049792-DrEf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExqxz4Bf2G5wHituFJxh18P1Fz3w0omrR4"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="hero" size="sm">
-                        <Eye className="w-4 h-4" />
-                        View
-                      </Button>
-                    </a>
-
-                   <a
-                    href="https://github.com/Kawtar-Elg/Alf-Laylaa.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="glass" size="sm">
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                  </a>
-
+                    {project.viewUrl && (
+                      <a
+                        href={project.viewUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="hero" size="sm">
+                          <Eye className="w-4 h-4" />
+                          View
+                        </Button>
+                      </a>
+                    )}
+                    
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="glass" size="sm">
+                          <Github className="w-4 h-4" />
+                          Code
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -194,24 +197,33 @@ const PortfolioSection = () => {
 
                   {/* Project Links */}
                   <div className="flex space-x-3">
-                 <a href="https://alf-layla.great-site.net" target="_blank" rel="noopener noreferrer" className="flex-1">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </Button>
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex-1"
+                      >
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <ExternalLink className="w-4 h-4" />
+                          Live Demo
+                        </Button>
                       </a>
-                   <a
-                        href="https://github.com/Kawtar-Elg/Alf-Laylaa.git"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button variant="ghost" size="sm" className="flex-1">
-                        <Github className="w-4 h-4" />
-                        Source
-                      </Button>
-                    </a>
-
+                    )}
+                    
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
+                      >
+                        <Button variant="ghost" size="sm" className="flex-1">
+                          <Github className="w-4 h-4" />
+                          Source
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -222,10 +234,10 @@ const PortfolioSection = () => {
         {/* Load More Section */}
         <div className="text-center mt-12">
           <a href="https://github.com/Kawtar-Elg" target="_blank" rel="noopener noreferrer" className="flex-1">
-          <Button variant="hero" size="lg">
-            View All Projects
-            <ExternalLink className="w-5 h-5" />
-          </Button>
+            <Button variant="hero" size="lg">
+              View All Projects
+              <ExternalLink className="w-5 h-5" />
+            </Button>
           </a>
         </div>
       </div>

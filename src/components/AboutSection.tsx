@@ -80,11 +80,7 @@ const AboutSection = () => {
                   the power of interdisciplinary knowledge. This diverse skill set allows me to approach 
                   challenges from unique angles and create truly innovative solutions.
                 </p>
-                <p>
-                  What drives me most is the potential of emerging technologies, especially in robotics 
-                  and AI. I'm committed to staying at the forefront of technological advancement while 
-                  maintaining a strong focus on user experience and creative design.
-                </p>
+               
               </div>
             </div>
 

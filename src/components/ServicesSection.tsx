@@ -119,13 +119,21 @@ const ServicesSection = () => {
             that make a real impact. I'm here to help you every step of the way.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              Get Started Today
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="glass" size="lg">
-              View Portfolio
-            </Button>
+
+
+        <a href="#ContactSection">
+          <Button variant="hero" size="lg">
+            Get Started Today
+            <ArrowRight className="w-5 h-5" />
+          </Button>
+        </a>
+
+        <a href="http://yourlink.com" target="_blank" rel="noopener noreferrer">
+          <Button variant="glass" size="lg">
+            View Portfolio
+          </Button>
+        </a>
+
           </div>
         </div>
       </div>

@@ -50,10 +50,13 @@ const HeroSection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="group">
-                    Let’s start the magic
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+               <a href="https://www.linkedin.com/in/kawtar-elg-5924402b9/">
+              <Button variant="hero" size="lg" className="group">
+                Let’s start the magic
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+
                 <Button variant="glass" size="lg" className="group">
                   <Play className="w-5 h-5" />
                  Relax, your project is in safe and creative hands !
