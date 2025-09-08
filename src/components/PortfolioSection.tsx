@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Eye } from "lucide-react";
 
+// Import all images
+import rbtc from "@/assets/rbtc.png";
+import project1 from "@/assets/1.png";
+import portfoliopic from "@/assets/portfoliopic.png";
+import appvers from "@/assets/appvers.png";
+import appvers2 from "@/assets/appvers (2).png";
+import management from "@/assets/management.png";
+
 const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -14,7 +22,7 @@ const PortfolioSection = () => {
       category: "Robotics",
       description: "Robotics Club CMC – a student community passionate about robotics, AI, and innovation.",
       technologies: ["html", "css", "bootstrap", "java Script"],
-      image: "src/assets/rbtc.png",
+      image: rbtc,
       liveUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
       githubUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
       viewUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0"
@@ -25,7 +33,7 @@ const PortfolioSection = () => {
       category: "Web",
       description: "Propose a simple, modern, and intuitive digital solution that allows users to book luxury accommodations in just a few clicks.",
       technologies: ["html", "css", "bootstrap ", "python"],
-      image: "src/assets/1.png",
+      image: project1,
       liveUrl: "https://alf-layla.great-site.net",
       githubUrl: "https://github.com/Kawtar-Elg/Alf-Laylaa.git",
       viewUrl: "https://www.linkedin.com/posts/kawtar-elg-5924402b9_devweb-php-mysql-activity-7355033067910049792-DrEf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExqxz4Bf2G5wHituFJxh18P1Fz3w0omrR4"
@@ -36,7 +44,7 @@ const PortfolioSection = () => {
       category: "Web",
       description: "Responsive portfolio website with modern design and smooth animations.",
       technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
-      image: "src/assets/portfoliopic.png",
+      image: portfoliopic,
       liveUrl: "https://github.com/Kawtar-Elg",
       githubUrl: "https://github.com/Kawtar-Elg",
       viewUrl: "https://github.com/Kawtar-Elg"
@@ -47,7 +55,7 @@ const PortfolioSection = () => {
       category: "Mobile",
       description: "Gérez votre hamam en toute simplicité !",
       technologies: ["Kotlin", "jetbrain", "flutter ", "react"],
-      image: "src/assets/appvers.png",
+      image: appvers,
       liveUrl: "https://github.com/Kawtar-Elg",
       githubUrl: "https://github.com/Kawtar-Elg",
       viewUrl: "https://github.com/Kawtar-Elg"
@@ -58,7 +66,7 @@ const PortfolioSection = () => {
       category: "descktop",
       description: "Gérez votre hamam en toute simplicité !",
       technologies: ["python", "flask", "tikinter"],
-      image: "src/assets/appvers (2).png",
+      image: appvers2,
       liveUrl: "https://github.com/Kawtar-Elg",
       githubUrl: "https://github.com/Kawtar-Elg",
       viewUrl: "https://github.com/Kawtar-Elg"
@@ -69,7 +77,7 @@ const PortfolioSection = () => {
       category: "Web",
       description: " A project developed with passion by Wiam and Kawtar.",
       technologies: ["Flutter", "Dart", "SQLite", "Push Notifications"],
-      image: "src/assets/management.png",
+      image: management,
       liveUrl: "http://user-management-system-eosin.vercel.app/",
       githubUrl: "https://github.com/Kawtar-Elg/User-Management-System.git",
       viewUrl: "http://user-management-system-eosin.vercel.app/"
