@@ -98,12 +98,6 @@ const ServicesSection = () => {
                   ))}
                 </div>
 
-                {/* Call to Action */}
-                <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-all duration-300">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-
                 {/* Hover Glow Effect */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10 blur-xl`}></div>
               </div>
@@ -120,19 +114,18 @@ const ServicesSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
+            <a href="https://www.linkedin.com/in/kawtar-elg-5924402b9/">
+              <Button variant="hero" size="lg">
+                Get Started Today
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
 
-        <a href="#ContactSection">
-          <Button variant="hero" size="lg">
-            Get Started Today
-            <ArrowRight className="w-5 h-5" />
-          </Button>
-        </a>
-
-        <a href="http://yourlink.com" target="_blank" rel="noopener noreferrer">
-          <Button variant="glass" size="lg">
-            View Portfolio
-          </Button>
-        </a>
+            <a href="https://elg-kawtar-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <Button variant="glass" size="lg">
+                View Portfolio
+              </Button>
+            </a>
 
           </div>
         </div>
