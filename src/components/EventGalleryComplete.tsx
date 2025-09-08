@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Calendar, MapPin } from "lucide-react";
 
+// Import all images
+import event1 from "@/assets/event1.jpg";
+import event2 from "@/assets/event2.jpg";
+import event3 from "@/assets/EVENT3.jpg";
+import event4 from "@/assets/event4.jpg";
+import competition1 from "@/assets/COMPETITION1.jpg";
+import competition2 from "@/assets/COMPETITION2.jpg";
+
 // Event data with proper image URLs
 const events = [
   {
@@ -9,7 +17,7 @@ const events = [
     date: "April 15, 2025",
     location: "Rabat, ENIM",
     category: "Forum",
-    image: "src/assets/event1.jpg",
+    image: event1,
     description: "Forum Mines Rabat Entreprises. Le carrefour privilégié entre les entreprises leaders et les talents de l'école d'ingénieurs de référence au Maroc. "
   },
   {
@@ -18,7 +26,7 @@ const events = [
     date: "February 28, 2024",
     location: "IAV RABAT",
     category: "Stand",
-    image: "src/assets/event2.jpg",
+    image: event2,
     description: "le stand de notre Club Robotics CMC, où nous présentons nos projets réalisés en robotique. Venez explorer nos innovations et en apprendre plus sur nos réalisations !"
   },
   {
@@ -27,7 +35,7 @@ const events = [
     date: "January 20, 2024",
     location: "Bebliothéque National , Rabat",
     category: "Stand",
-    image: "src/assets/EVENT3.jpg",
+    image: event3,
     description: "Notre Club Robotics CMC a installé son stand à la Bibliothèque Nationale, où nous présentons nos projets en robotique et partageons notre passion pour l'innovation technologique."
   },
   {
@@ -36,7 +44,7 @@ const events = [
     date: "24 july, 2024",
     location: "Complex Culturel Ocp , El Jadida",
     category: "Formation",
-    image: "src/assets/event4.jpg",
+    image: event4,
     description: "Soutnence de projet final de Graphique design sous le Nom de Tounawar."
   },
   {
@@ -45,7 +53,7 @@ const events = [
     date: "5 JUNE 2025",
     location: "EHTP , Casablanca",
     category: "Competitions",
-    image: "src/assets/COMPETITION1.jpg",
+    image: competition1,
     description: "Notre Club Robotics CMC est fier d'avoir remporté le 1er prix à l'EHTP grâce à nos projets innovants en robotique. Venez découvrir notre savoir-faire et notre passion pour la technologie !"
   },
   {
@@ -54,7 +62,7 @@ const events = [
     date: "25 MAY 2024",
     location: "ENIM , Rabat",
     category: "Competitions",
-    image: "src/assets/COMPETITION2.jpg",
+    image: competition2,
     description: "Notre Club Robotics CMC a participé au competition de robotique de l'EHTP à Casablanca, présentant nos projets innovants et notre passion pour la technologie."
   }
 ];
