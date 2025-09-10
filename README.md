@@ -42,11 +42,11 @@ I’m also passionate about **robotics and IoT**, blending technology with creat
 
 ## 📬 Contact
 
-**Email:** kawtar@example.com
+**Email:** elgaddi13@example.com
 
 **LinkedIn:**  www.linkedin.com/in/kawtar-elg-5924402b9
 
-**Portfolio Website:** URL: https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84
+**Portfolio Website:** URL: [https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84](https://elg-kawtar-portfolio.vercel.app/)
 
 <div align="center">
   
