@@ -37,16 +37,16 @@ I’m also passionate about **robotics and IoT**, blending technology with creat
 - npm 9+ / pnpm / yarn
   
 ## **🛠️ Tech Stack**
-<p align="center"> <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS"> <img src="https://img.shields.io/badge/Kotlin-0095D5?logo=kotlin&logoColor=white" alt="Kotlin"> </p>
+<p align="center"> <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white" alt="Vite"> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">  </p>
 
 
 ## 📬 Contact
 
-**Email:** kawtar@example.com
+**Email:** elgaddi13@example.com
 
 **LinkedIn:**  www.linkedin.com/in/kawtar-elg-5924402b9
 
-**Portfolio Website:** URL: https://lovable.dev/projects/ca89549e-0ee5-4f51-89b2-60377f4b9b84
+**Portfolio Website:** URL: https://elg-kawtar-portfolio.vercel.app/
 
 <div align="center">
   
