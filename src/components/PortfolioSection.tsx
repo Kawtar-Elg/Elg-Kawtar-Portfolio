@@ -9,6 +9,10 @@ import portfoliopic from "@/assets/portfoliopic.png";
 import appvers from "@/assets/appvers.png";
 import appvers2 from "@/assets/appvers (2).png";
 import management from "@/assets/management.png";
+import bstamyImage from "@/assets/Bstamy+_Presentation.png";
+import waterlyImage from "@/assets/Waterly Presentation.png";
+import taxiHubImage from "@/assets/T°axi Hub Presentation.png";
+
 
 const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -16,6 +20,39 @@ const PortfolioSection = () => {
   const categories = ["All", "Web", "Mobile", "Design", "Robotics"];
 
   const projects = [
+    {
+      id: 7,
+      title: "BSTAMY+",
+      category: "App",
+      description: " Bstamy+ is a mobile banking app that helps users manage accounts and transactions, make transfers, track activity, and receive real-time notifications.",
+      technologies: ["kotlin", "jetpack compose", "FireBsae", "Push Notifications"],
+      image: bstamyImage,
+      liveUrl: "bstamy-web-site.vercel.app",
+      githubUrl: "https://github.com/Kawtar-Elg/BstamyPlus",
+      viewUrl: "bstamy-web-site.vercel.app"
+    },
+    {
+      id: 8,
+      title: "WATERLY",
+      category: "App",
+      description: " Waterly helps users build better daily hydration habits by tracking water intake, setting personal goals, sending reminders, and showing progress through clear, intuitive charts.",
+      technologies: ["kotlin", "jetpack compose", "FireBsae", "Push Notifications"],
+      image: waterlyImage,
+      liveUrl: "https://github.com/Kawtar-Elg/waterly",
+      githubUrl: "https://github.com/Kawtar-Elg/waterly",
+      viewUrl: "https://github.com/Kawtar-Elg/waterly"
+    },
+    {
+      id: 9,
+      title: "TaxiHub",
+      category: "App",
+      description: " Taxi Hub is an innovative mobile app that acts as a smart meter, allowing drivers to manage trips and estimate fares in real time based on time, distance, and cost, with a smooth and transparent experience for drivers and passengers.",
+      technologies: ["kotlin", "FireBsae", "Push Notifications"],
+      image: taxiHubImage,
+      liveUrl: "https://github.com/Kawtar-Elg/Taxi-Hub",
+      githubUrl: "https://github.com/Kawtar-Elg/Taxi-Hub",
+      viewUrl: "https://github.com/Kawtar-Elg/Taxi-Hub"
+    },
     {
       id: 1,
       title: "Robotic_Club_CMC",
@@ -45,9 +82,9 @@ const PortfolioSection = () => {
       description: "Responsive portfolio website with modern design and smooth animations.",
       technologies: ["React", "Tailwind", "Framer Motion", "TypeScript"],
       image: portfoliopic,
-      liveUrl: "https://github.com/Kawtar-Elg",
-      githubUrl: "https://github.com/Kawtar-Elg",
-      viewUrl: "https://github.com/Kawtar-Elg"
+      liveUrl: "https://github.com/Kawtar-Elg/Elg-Kawtar-Portfolio",
+      githubUrl: "https://github.com/Kawtar-Elg/Elg-Kawtar-Portfolio.git",
+      viewUrl: "https://elg-kawtar-portfolio.vercel.app/"
     },
     {
       id: 4,
@@ -81,7 +118,8 @@ const PortfolioSection = () => {
       liveUrl: "http://user-management-system-eosin.vercel.app/",
       githubUrl: "https://github.com/Kawtar-Elg/User-Management-System.git",
       viewUrl: "http://user-management-system-eosin.vercel.app/"
-    }
+    },
+    
   ];
 
   const filteredProjects = activeCategory === "All" 

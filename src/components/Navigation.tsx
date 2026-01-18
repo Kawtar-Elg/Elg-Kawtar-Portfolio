@@ -52,7 +52,7 @@ const Navigation = () => {
 
           {/* Download CV Button */}
         <div className="hidden md:block">
-          <a href="public/Kawtar-ELG-CV.pdf" download>
+          <a href="src/assets/CV_EL_GADDI_KAWTAR .pdf" download>
             <Button variant="hero" size="sm">
               <Download className="w-4 h-4" />
               Download CV

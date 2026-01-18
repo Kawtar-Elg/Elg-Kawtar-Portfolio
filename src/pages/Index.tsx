@@ -1,11 +1,11 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ServicesSection from "@/components/ServicesSection";
-import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
-import EventGalleryComplete from "@/components/EventGalleryComplete";   
+// import EventGalleryComplete from "@/components/EventGalleryComplete";   
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,10 +13,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+       <PortfolioSection />
       <AboutSection />
-      <EventGalleryComplete />
+      {/* <EventGalleryComplete /> */}
       <SkillsSection />
-      <PortfolioSection />
       <ServicesSection />
       <ContactSection />
       <Footer />
