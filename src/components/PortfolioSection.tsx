@@ -108,17 +108,6 @@ const PortfolioSection = () => {
       githubUrl: "https://github.com/Kawtar-Elg",
       viewUrl: "https://github.com/Kawtar-Elg"
     },
-    {
-      id: 6,
-      title: "CRUD Operations Web App",
-      category: "Web",
-      description: " A project developed with passion by Wiam and Kawtar.",
-      technologies: ["Flutter", "Dart", "SQLite", "Push Notifications"],
-      image: management,
-      liveUrl: "http://user-management-system-eosin.vercel.app/",
-      githubUrl: "https://github.com/Kawtar-Elg/User-Management-System.git",
-      viewUrl: "http://user-management-system-eosin.vercel.app/"
-    },
     
   ];
 
