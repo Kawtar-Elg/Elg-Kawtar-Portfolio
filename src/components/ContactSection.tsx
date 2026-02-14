@@ -25,7 +25,7 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('http://localhost:3001/api/contact', {
         method: 'POST',
@@ -62,8 +62,8 @@ const ContactSection = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+212 66666666",
-      link: "tel:+15551234567"
+      value: "06 16 90 23 24",
+      link: "tel:+33616902324"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -75,8 +75,8 @@ const ContactSection = () => {
 
   const socialLinks = [
     { icon: <Github className="w-6 h-6" />, name: "GitHub", url: "https://github.com/Kawtar-Elg" },
-    { icon: <Linkedin className="w-6 h-6" />, name: "LinkedIn", url: "https://www.linkedin.com/in/kawtar-elg-5924402b9/" },
-    
+    { icon: <Linkedin className="w-6 h-6" />, name: "LinkedIn", url: "https://www.linkedin.com/in/kawtar-el-gaddi-5924402b9/" },
+
   ];
 
   return (
@@ -86,12 +86,12 @@ const ContactSection = () => {
       <div className="absolute bottom-20 right-10 w-60 h-60 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fadeInUp">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to bring your ideas to life? Let's collaborate and create something amazing together. 
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            Ready to bring your ideas to life? Let's collaborate and create something amazing together.
             I'm always excited to work on new projects and challenges.
           </p>
         </div>
@@ -100,9 +100,9 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8 animate-slideInLeft">
             <div>
-              <h3 className="text-2xl font-bold mb-6 gradient-text">Let's Start a Conversation</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you have a project in mind, need consultation, or just want to say hello, 
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 gradient-text">Let's Start a Conversation</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                Whether you have a project in mind, need consultation, or just want to say hello,
                 I'd love to hear from you. Let's discuss how we can work together to achieve your goals.
               </p>
             </div>
@@ -157,9 +157,9 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="animate-fadeInUp">
-            <div className="glass-card rounded-2xl p-8 hover-glow">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Send a Message</h3>
-              
+            <div className="glass-card rounded-2xl p-6 sm:p-8 hover-glow">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-foreground">Send a Message</h3>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>

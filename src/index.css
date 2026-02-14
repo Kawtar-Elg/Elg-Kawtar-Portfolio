@@ -190,9 +190,20 @@ All colors MUST be HSL.
 
 /* Section Styling */
 .section-padding {
-  @apply py-20 px-6;
+  @apply py-12 px-4 sm:py-16 md:py-20 sm:px-6;
 }
 
 .container-custom {
-  @apply max-w-7xl mx-auto;
+  @apply max-w-7xl mx-auto px-4 sm:px-6;
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
 }

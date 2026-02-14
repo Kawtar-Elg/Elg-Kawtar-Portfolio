@@ -25,14 +25,13 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-card shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-card shadow-lg" : "bg-transparent"
+        }`}
     >
-      <div className="container-custom">
+      <div className="container-custom px-4 sm:px-6">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold gradient-text">
+          <div className="text-xl sm:text-2xl font-bold gradient-text">
             Kawtar El Gaddi
           </div>
 
@@ -51,14 +50,14 @@ const Navigation = () => {
           </div>
 
           {/* Download CV Button */}
-        <div className="hidden md:block">
-          <a href="/CV_EL_GADDI_KAWTAR.pdf" download>
-            <Button variant="hero" size="sm">
-              <Download className="w-4 h-4" />
-              Download CV
-            </Button>
-          </a>
-        </div>
+          <div className="hidden md:block">
+            <a href="/CV_EL_GADDI_KAWTAR.pdf" download>
+              <Button variant="hero" size="sm">
+                <Download className="w-4 h-4" />
+                Download CV
+              </Button>
+            </a>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
