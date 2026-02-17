@@ -54,12 +54,12 @@ const AboutSection = () => {
       <div className="absolute bottom-20 left-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fadeInUp">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A highly motivated developer with a passion for creating exceptional digital experiences. 
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+            A highly motivated developer with a passion for creating exceptional digital experiences.
             My journey combines technical expertise with creative vision to deliver solutions that truly matter.
           </p>
         </div>
@@ -68,28 +68,28 @@ const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-slideInLeft">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground">My Story</h3>
-              <div className="space-y-4 text-muted-foreground">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">My Story</h3>
+              <div className="space-y-4 text-sm sm:text-base text-muted-foreground">
                 <p>
-                  As a passionate developer, I've dedicated myself to mastering the art of digital creation. 
-                  My journey began with a curiosity about how technology can solve real-world problems, 
+                  As a passionate developer, I've dedicated myself to mastering the art of digital creation.
+                  My journey began with a curiosity about how technology can solve real-world problems,
                   and has evolved into a deep expertise across multiple domains.
                 </p>
                 <p>
-                  From web development to mobile applications, graphic design to robotics, I believe in 
-                  the power of interdisciplinary knowledge. This diverse skill set allows me to approach 
+                  From web development to mobile applications, graphic design to robotics, I believe in
+                  the power of interdisciplinary knowledge. This diverse skill set allows me to approach
                   challenges from unique angles and create truly innovative solutions.
                 </p>
-               
+
               </div>
             </div>
 
             {/* Highlights Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="glass-card rounded-2xl p-6 hover-glow group"
+                  className="glass-card rounded-2xl p-4 sm:p-6 hover-glow group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -104,7 +104,7 @@ const AboutSection = () => {
 
           {/* Right Content - Timeline */}
           <div className="animate-fadeInUp">
-            <h3 className="text-2xl font-bold text-foreground mb-8">My Journey</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 sm:mb-8">My Journey</h3>
             <div className="space-y-6">
               {timeline.map((item, index) => (
                 <div
@@ -116,7 +116,7 @@ const AboutSection = () => {
                   {index !== timeline.length - 1 && (
                     <div className="absolute left-6 top-12 w-0.5 h-16 bg-gradient-to-b from-primary to-transparent"></div>
                   )}
-                  
+
                   {/* Timeline Dot */}
                   <div className="relative">
                     <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300 hover-glow">
