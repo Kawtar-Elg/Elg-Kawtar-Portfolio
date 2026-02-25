@@ -122,9 +122,9 @@ const PortfolioSection = () => {
       description: "Robotics Club CMC – a student community passionate about robotics, AI, and innovation.",
       technologies: ["html", "css", "bootstrap", "java Script"],
       image: rbtc,
-      liveUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
-      githubUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0",
-      viewUrl: "https://www.instagram.com/club_robotique_cmc_rabat?igsh=MWwzNnpldTV5OGp0"
+      liveUrl: "https://robotics-cmc.tech/",
+      githubUrl: "https://github.com/Kawtar-Elg",
+      viewUrl: "https://robotics-cmc.tech/"
     },  
     {
       id: 3,
