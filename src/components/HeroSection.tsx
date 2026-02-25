@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Code, Palette, Bot } from "lucide-react";
+import { ArrowRight, Play, Code, Palette, Bot, Download } from "lucide-react";
 import kawtarProfile from "@/assets/kawtar-profile.jpg";
 
 const HeroSection = () => {
@@ -57,10 +57,12 @@ const HeroSection = () => {
                   </Button>
                 </a>
 
-                <Button variant="glass" size="lg" className="group hidden sm:flex">
-                  <Play className="w-5 h-5" />
-                  Relax, your project is in safe and creative hands !
-                </Button>
+                <a href="/cv.pdf" download="CV_Kawtar_ElGaddi.pdf" type="application/pdf">
+                  <Button variant="glass" size="lg" className="group hidden sm:flex">
+                    <Download className="w-5 h-5" />
+                    Download CV
+                  </Button>
+                </a>
               </div>
 
               {/* Stats */}

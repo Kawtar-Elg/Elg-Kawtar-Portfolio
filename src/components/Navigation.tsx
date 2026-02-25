@@ -51,7 +51,7 @@ const Navigation = () => {
 
           {/* Download CV Button */}
           <div className="hidden md:block">
-            <a href="/CV_EL_GADDI_KAWTAR.pdf" download>
+            <a href="/CV_EL_GADDI__KAWTAR.pdf" download="CV_EL_GADDI_KAWTAR.pdf">
               <Button variant="hero" size="sm">
                 <Download className="w-4 h-4" />
                 Download CV
@@ -81,7 +81,7 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <a href="/CV_EL_GADDI_KAWTAR.pdf" download>
+            <a href="/CV_EL_GADDI__KAWTAR.pdf" download="CV_EL_GADDI_KAWTAR.pdf">
               <Button variant="hero" size="sm" className="w-full mt-4">
                 <Download className="w-4 h-4" />
                 Download CV

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Github, Eye, Import } from "lucide-react";
 
 // Import all images
 import rbtc from "@/assets/rbtc.png";
@@ -11,7 +11,10 @@ import appvers2 from "@/assets/appvers (2).png";
 import management from "@/assets/management.png";
 import bstamyImage from "@/assets/Bstamy+_Presentation.png";
 import waterlyImage from "@/assets/Waterly Presentation.png";
-import taxiHubImage from "@/assets/T°axi Hub Presentation.png";
+import taxiHubImage from "@/assets/T°axi Hub Presentation.png"
+import dashlyImage from "@assets/postlinkdin.png" ;
+import autobrain from  "src/assets/autobrain.png" ;
+import keycare from "src/assets/KEYCARE PPT.png" ;
 
 
 const PortfolioSection = () => {
@@ -20,8 +23,44 @@ const PortfolioSection = () => {
   const categories = ["All", "Web", "Mobile", "Design", "Robotics"];
 
   const projects = [
+
+    {
+      id: 12,
+      title: "KEYCARE",
+      category: "App",
+      description: "An AI-powered keyboard that helps people choose better words in real time.",
+      technologies: ["kotlin", "java", "Finetech", "ML Kit" ],
+      image: keycare,
+      liveUrl: "https://key-care.app/",
+      githubUrl: "https://github.com/Kawtar-Elg",
+    
+    
+    },
+    {
+      id: 6,
+      title: "AutoBrain",
+      category: "App",
+      description: "Application de Diagnostic Automobile par Intelligence Artificielle",
+      technologies: ["kotlin", "jetpack compose", "FireBsae", "ML Kit", "TensorFlow Lite", "Gemini Api"],
+      image: autobrain,
+      githubUrl: "https://github.com/Kawtar-Elg",
+      
+    
+    
+    },
     {
       id: 7,
+      title: "DASHLY",
+      category: "App",
+      description: " Record Your Journey Securely & Park with Confidence",
+      technologies: ["kotlin", "jetpack compose", "FireBsae", "Room"],
+      image: dashlyImage,
+      liveUrl: "bstamy-web-site.vercel.app",
+      githubUrl: "https://github.com/Kawtar-Elg/Dashly.git",
+    
+    },
+     {
+      id: 9,
       title: "BSTAMY+",
       category: "App",
       description: " Bstamy+ is a mobile banking app that helps users manage accounts and transactions, make transfers, track activity, and receive real-time notifications.",
