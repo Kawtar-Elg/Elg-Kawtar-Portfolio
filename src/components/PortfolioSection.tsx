@@ -12,9 +12,9 @@ import management from "@/assets/management.png";
 import bstamyImage from "@/assets/Bstamy+_Presentation.png";
 import waterlyImage from "@/assets/Waterly Presentation.png";
 import taxiHubImage from "@/assets/T°axi Hub Presentation.png"
-import dashlyImage from "@assets/postlinkdin.png" ;
-import autobrain from  "src/assets/autobrain.png" ;
-import keycare from "src/assets/KEYCARE PPT.png" ;
+import dashlyImage from "@/assets/postlinkdin.png";
+import autobrain from "@/assets/autobrain.png";
+import keycare from "@/assets/KEYCARE PPT.png";
 
 
 const PortfolioSection = () => {
