@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(215_90%_58%/0.3)] hover:-translate-y-0.5",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-input bg-transparent hover:bg-accent/10 hover:text-accent hover:border-accent/50",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-primary/10 hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-[0_0_30px_hsl(320_65%_55%/0.4)] hover:-translate-y-1 transform transition-all duration-300",
-        glass: "glass-card text-foreground hover:bg-card/20 hover:shadow-lg hover:-translate-y-0.5",
-        glow: "bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(320_65%_55%/0.6)] hover:-translate-y-1 animate-glow",
+        hero: "bg-gradient-to-r from-primary to-[hsl(200_85%_50%)] text-white hover:shadow-[0_0_30px_hsl(215_90%_58%/0.4)] hover:-translate-y-1 transform transition-all duration-300",
+        glass: "glass-card text-foreground hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all",
+        glow: "bg-primary text-primary-foreground hover:shadow-[0_0_40px_hsl(215_90%_58%/0.5)] hover:-translate-y-1 animate-glow",
       },
       size: {
         default: "h-10 px-4 py-2",

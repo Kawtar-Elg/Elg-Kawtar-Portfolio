@@ -12,15 +12,37 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-const contactSchema = z.object({
+const collaborationSchema = z.object({
+  title: z.string().min(1),
+  projectType: z.string().min(1),
+  description: z.string().min(1),
+  email: z.string().email(),
+  budget: z.string().optional()
+});
+
+const legacyContactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   message: z.string().min(1)
 });
 
+const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (character) => ({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;'
+}[character] ?? character));
+
 app.post('/api/contact', async (req, res) => {
   try {
-    const { name, email, message } = contactSchema.parse(req.body);
+    const collaboration = collaborationSchema.safeParse(req.body);
+    const legacy = collaboration.success ? null : legacyContactSchema.parse(req.body);
+    const name = collaboration.success ? collaboration.data.title : legacy.name;
+    const email = collaboration.success ? collaboration.data.email : legacy.email;
+    const message = collaboration.success
+      ? `Project type: ${collaboration.data.projectType}\nBudget: ${collaboration.data.budget || 'Not specified'}\n\n${collaboration.data.description}`
+      : legacy.message;
 
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
@@ -36,10 +58,10 @@ app.post('/api/contact', async (req, res) => {
       subject: `Portfolio Contact: ${name}`,
       html: `
         <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name / Title:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
       `
     });
 

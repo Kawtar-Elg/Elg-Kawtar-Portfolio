@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Code, Palette, Bot, Download } from "lucide-react";
-import kawtarProfile from "@/assets/kawtar-profile.jpg";
+import kawtarProfile from "@/assets/kawtar-profile.jpeg";
 
 const HeroSection = () => {
   return (
