@@ -1,4 +1,5 @@
 import { achievements } from "@/data/timeline";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const years = ["2021", "2022", "2023", "2024", "2025"];
@@ -8,7 +9,7 @@ export default function ActivityGraph() {
     <section id="activity" className="workspace-panel workspace-activity-panel" aria-labelledby="activity-title">
       <div className="workspace-section-heading">
         <div><p className="workspace-code-label">/activity</p><h2 id="activity-title">Build activity</h2><p>Meaningful milestones, not fabricated daily commits.</p></div>
-        <span className="workspace-section-meta">2021 → 2025</span>
+        <span className="workspace-section-meta workspace-date-range"><span>2021</span><ArrowRight aria-hidden="true" /><span>2025</span></span>
       </div>
       <div className="workspace-activity-grid" aria-label="Portfolio milestone activity from 2021 to 2025">
         {years.map((year, rowIndex) => (

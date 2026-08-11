@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink, Github, Globe2, Play, Store } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, Globe2, Play, Smartphone, Store } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { RepositoryRecord } from "@/lib/repository-utils";
 import { cn } from "@/lib/utils";
-import RepositoryPreview from "./RepositoryPreview";
+import RepositoryPreview, { type RepositoryPreviewMode } from "./RepositoryPreview";
 
 interface RepositoryCardProps {
   repository: RepositoryRecord;
   layout?: "featured" | "compact" | "list";
+  previewMode?: RepositoryPreviewMode;
   onWatchDemo?: (repository: RepositoryRecord) => void;
   onOpenLiveSite?: (repository: RepositoryRecord) => void;
 }
@@ -18,7 +19,7 @@ const ExternalAction = ({ href, children, icon }: { href: string; children: Reac
   </a>
 );
 
-export default function RepositoryCard({ repository, layout = "featured", onWatchDemo, onOpenLiveSite }: RepositoryCardProps) {
+export default function RepositoryCard({ repository, layout = "featured", previewMode = "presentation", onWatchDemo, onOpenLiveSite }: RepositoryCardProps) {
   const isCompact = layout === "compact";
   const isList = layout === "list";
 
@@ -35,7 +36,7 @@ export default function RepositoryCard({ repository, layout = "featured", onWatc
     >
       <div className="workspace-repository-card__content">
         <div className="workspace-repository-card__heading">
-          <span className="workspace-repo-glyph" aria-hidden="true">{repository.category === "Mobile" ? "⌁" : "◇"}</span>
+          <span className="workspace-repo-glyph" aria-hidden="true">{repository.category === "Mobile" ? <Smartphone /> : <Globe2 />}</span>
           <div>
             <Link to={`/repositories/${repository.slug}`} className="workspace-repository-name">
               {repository.title} <ArrowUpRight aria-hidden="true" />
@@ -64,7 +65,7 @@ export default function RepositoryCard({ repository, layout = "featured", onWatc
           )}
         </div>
       </div>
-      <div className="workspace-repository-card__media"><RepositoryPreview repository={repository} compact={isCompact} /></div>
+      <div className="workspace-repository-card__media"><RepositoryPreview repository={repository} compact={isCompact} previewMode={previewMode} /></div>
     </motion.article>
   );
 }

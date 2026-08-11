@@ -20,7 +20,7 @@ export default function ProfileReadme() {
       <div className="workspace-readme__body">
         <div>
           <p className="workspace-code-label"># profile.readme</p>
-          <h2 id="profile-readme-title">Hi, I&apos;m Kawtar <span aria-hidden="true">👋</span></h2>
+          <h2 id="profile-readme-title">Hi, I&apos;m Kawtar</h2>
           <p className="workspace-lede">
             A passionate developer dedicated to mastering digital creation. My journey spans mobile development, UI/UX design, and AI, with a focus on building applications that are visually captivating and structurally sound.
           </p>

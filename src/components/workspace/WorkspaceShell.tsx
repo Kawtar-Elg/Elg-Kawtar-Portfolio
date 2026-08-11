@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Github, Linkedin, Mail, Plus, Search } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, Plus, Search } from "lucide-react";
 import kawtarProfile from "@/assets/kawtar-profile.jpeg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -86,7 +86,7 @@ export default function WorkspaceShell({ children }: WorkspaceShellProps) {
             </a>
           </div>
           <a href="/CV_EL_GADDI__KAWTAR.pdf" download="CV_EL_GADDI_KAWTAR.pdf" className="workspace-cv-link">
-            CV_EL_GADDI.pdf <span aria-hidden="true">↓</span>
+            <span>CV_EL_GADDI.pdf</span><Download aria-hidden="true" />
           </a>
         </div>
       </aside>
@@ -114,7 +114,7 @@ export default function WorkspaceShell({ children }: WorkspaceShellProps) {
       </main>
 
       <Link to="/#collaboration" className="workspace-floating-cta hidden sm:inline-flex">
-        <Plus aria-hidden="true" /> Let&apos;s Build <span aria-hidden="true">→</span>
+        <Plus aria-hidden="true" /> Let&apos;s Build <ArrowRight aria-hidden="true" />
       </Link>
     </div>
   );
