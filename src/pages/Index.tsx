@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import ExperienceSwitcher from "@/components/experience/ExperienceSwitcher";
 import WorkspaceShell, { WorkspaceActionButton, WorkspaceHeader } from "@/components/workspace/WorkspaceShell";
 import WorkspaceTabs from "@/components/workspace/WorkspaceTabs";
 import ProfileReadme from "@/components/workspace/ProfileReadme";
@@ -41,6 +42,7 @@ export default function Index() {
     <WorkspaceShell>
       <WorkspaceHeader path="README.md" action={<><Link to="/repositories" className="workspace-header-search"><Search aria-hidden="true" /> Find a repository... <kbd>/</kbd></Link><WorkspaceActionButton asChild><a href="#collaboration">Open a collaboration</a></WorkspaceActionButton></>} />
       <WorkspaceTabs />
+      <ExperienceSwitcher />
       <div className="workspace-overview-stack">
         <ProfileReadme />
         <section id="repositories" aria-labelledby="pinned-title" className="workspace-section">

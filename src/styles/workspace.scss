@@ -450,3 +450,45 @@ $sans: var(--font-sans);
   .workspace-repository-preview--devices-compact .workspace-device { width: clamp(96px, 29vw, 132px); }
   .workspace-device-pair { gap: 8px; }
 }
+
+// ─── Experience Switcher (dark developer theme overrides) ──
+.workspace-app .experience-switcher {
+  padding: 24px 0 8px;
+}
+
+.workspace-app .experience-switcher__eyebrow {
+  color: $muted;
+}
+
+.workspace-app .experience-switcher__option {
+  border-color: $border;
+  background: $surface;
+  color: $ink;
+}
+
+.workspace-app .experience-switcher__option:hover {
+  border-color: rgba(124, 124, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.workspace-app .experience-switcher__option--active {
+  border-color: $indigo;
+  box-shadow: 0 4px 24px rgba(124, 124, 255, 0.15);
+}
+
+.workspace-app .experience-switcher__active-bg {
+  background: rgba(124, 124, 255, 0.1);
+}
+
+.workspace-app .experience-switcher__icon {
+  background: rgba(124, 124, 255, 0.12);
+  color: $indigo;
+}
+
+.workspace-app .experience-switcher__label {
+  color: $indigo;
+}
+
+.workspace-app .experience-switcher__description {
+  color: $muted;
+}
