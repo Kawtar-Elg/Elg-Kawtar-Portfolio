@@ -55,13 +55,20 @@ import autobrain6 from "@/assets/autobrain/screen6.png";
 import autobrain7 from "@/assets/autobrain/screen7.png";
 import autobrain8 from "@/assets/autobrain/screen8.png";
 import autobrainLogo from "@/assets/autobrain-logo.png";
-import keycare from "@/assets/KEYCARE PPT.png";
-import keycareScreen1 from "@/assets/keycare/screen1.png";
-import keycareScreen2 from "@/assets/keycare/screen2.png";
-import keycareScreen3 from "@/assets/keycare/screen3.png";
+import keycarePpt from "@/assets/keycare/KEYCARE PPT.png";
+import keycarePresentation1 from "@/assets/keycare/Section 1.png";
+import keycarePresentation2 from "@/assets/keycare/Section 2.png";
+import keycarePresentation3 from "@/assets/keycare/Section 3.png";
+import keycareKeyboardRisky from "@/assets/keycare/keyboard_risky_state.png";
+import keycareKeyboardSafe from "@/assets/keycare/keyboard_safe_state.png";
+import keycareOnboardingAi from "@/assets/keycare/onboarding_ai_guidance.png";
+import keycareOnboardingKeyboard from "@/assets/keycare/onboarding_enable_keyboard.png";
+import keycareOnboardingWelcome from "@/assets/keycare/onboarding_welcome.png";
+import keycareRewriteTone from "@/assets/keycare/rewrite_tone_selection.png";
 import keycareScreen4 from "@/assets/keycare/screen4.png";
-import keycareScreen5 from "@/assets/keycare/screen5.png";
-import keycareLogo from "@/assets/keycare-logo.png";
+import keycareSettings from "@/assets/keycare/settings_privacy.png";
+import keycareWarning from "@/assets/keycare/warning_content_alert.png";
+import keycareLogo from "@/assets/keycare/keycare-logo.png";
 
 export interface Project {
   id: number;
@@ -76,6 +83,7 @@ export interface Project {
   technologies: string[];
   image: string;
   screens?: string[];
+  presentationImages?: string[];
   logo?: string;
   githubUrl?: string;
   liveUrl?: string;
@@ -102,8 +110,19 @@ export const projects: Project[] = [
       "Multi-language support",
     ],
     technologies: ["Kotlin", "Java", "ML Kit", "Android SDK"],
-    image: keycare,
-    screens: [keycareScreen1, keycareScreen2, keycareScreen3, keycareScreen4, keycareScreen5],
+    image: keycarePpt,
+    presentationImages: [keycarePresentation1, keycarePresentation2, keycarePresentation3],
+    screens: [
+      keycareOnboardingWelcome,
+      keycareOnboardingAi,
+      keycareOnboardingKeyboard,
+      keycareKeyboardRisky,
+      keycareKeyboardSafe,
+      keycareRewriteTone,
+      keycareSettings,
+      keycareWarning,
+      keycareScreen4,
+    ],
     logo: keycareLogo,
     liveUrl: "https://key-care.app/",
     videoUrl: "https://www.youtube.com/watch?v=r2qN9kBoU8w",

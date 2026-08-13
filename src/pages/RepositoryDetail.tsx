@@ -7,6 +7,7 @@ import VideoModal from "@/components/workspace/VideoModal";
 import LiveSiteModal from "@/components/workspace/LiveSiteModal";
 import DeviceMockup from "@/components/DeviceMockup";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
+import PresentationGallery from "@/components/PresentationGallery";
 import { getProjectSlug, getRepositoryRecords, type RepositoryRecord } from "@/lib/repository-utils";
 import NotFound from "./NotFound";
 
@@ -17,6 +18,7 @@ export default function RepositoryDetail() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [liveOpen, setLiveOpen] = useState(false);
   const opensLiveSiteInternally = repository?.title === "Robotics Club CMC";
+  const presentationOffset = repository?.presentationImages?.length ? 1 : 0;
 
   if (!repository) return <NotFound />;
 
@@ -65,18 +67,19 @@ export default function RepositoryDetail() {
           <article className="workspace-detail__readme">
             <div className="workspace-toc">
               <p className="workspace-code-label">on this page</p>
-              <div>{["Overview", "Problem", "Solution", "Features", "Role", "Architecture", "Technologies", "Screens", "Demo", "Links"].map((item, index) => <a href={`#${item.toLowerCase()}`} key={item}>{String(index + 1).padStart(2, "0")} / {item}</a>)}</div>
+              <div>{["Overview", ...(repository.presentationImages?.length ? ["Presentation"] : []), "Problem", "Solution", "Features", "Role", "Architecture", "Technologies", "Screens", "Demo", "Links"].map((item, index) => <a href={`#${item.toLowerCase()}`} key={item}>{String(index + 1).padStart(2, "0")} / {item}</a>)}</div>
             </div>
             <DetailSection id="overview" index="01" title="Overview"><p>{repository.description}</p></DetailSection>
-            {repository.problem && <DetailSection id="problem" index="02" title="Problem"><p>{repository.problem}</p></DetailSection>}
-            {repository.solution && <DetailSection id="solution" index="03" title="Solution"><p>{repository.solution}</p></DetailSection>}
-            {repository.keyFeatures?.length && <DetailSection id="features" index="04" title="Features"><div className="workspace-feature-grid">{repository.keyFeatures.map((feature) => <div key={feature}><Check aria-hidden="true" /> {feature}</div>)}</div></DetailSection>}
-            {repository.role && <DetailSection id="role" index="05" title="Role"><div className="workspace-role-note">{repository.role}</div></DetailSection>}
-            <DetailSection id="architecture" index="06" title="Architecture"><p>Architecture details are represented by the supplied {repository.technologies.join(", ")} stack.</p></DetailSection>
-            <DetailSection id="technologies" index="07" title="Technologies"><div className="workspace-topic-row">{repository.technologies.map((technology) => <span className="workspace-topic" key={technology}>{technology}</span>)}</div></DetailSection>
-            {repository.screens?.length && <DetailSection id="screens" index="08" title="Screens"><ScreenshotGallery screens={repository.screens} projectTitle={repository.title} /></DetailSection>}
-            {repository.videoUrl && <DetailSection id="demo" index="09" title="Demo"><div className="workspace-inline-video"><div><span className="workspace-video-status">internal viewer</span><h3>{repository.title} demo · YouTube</h3><p>Open the responsive demo viewer without leaving the portfolio.</p></div><button type="button" className="workspace-button" onClick={() => setVideoOpen(true)}><Play aria-hidden="true" /> Watch demo</button></div></DetailSection>}
-            <DetailSection id="links" index="10" title="Links"><div className="workspace-link-list">{repository.storeUrl && <a href={repository.storeUrl} target="_blank" rel="noreferrer"><Store aria-hidden="true" /> Play Store <ExternalLink aria-hidden="true" /><span>{repository.storeUrl}</span></a>}{repository.githubUrl && <a href={repository.githubUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> GitHub <ExternalLink aria-hidden="true" /><span>{repository.githubUrl}</span></a>}</div></DetailSection>
+            {repository.presentationImages?.length && <DetailSection id="presentation" index="02" title="Presentation"><PresentationGallery images={repository.presentationImages} projectTitle={repository.title} /></DetailSection>}
+            {repository.problem && <DetailSection id="problem" index={repository.presentationImages?.length ? "03" : "02"} title="Problem"><p>{repository.problem}</p></DetailSection>}
+            {repository.solution && <DetailSection id="solution" index={String(3 + presentationOffset).padStart(2, "0")} title="Solution"><p>{repository.solution}</p></DetailSection>}
+            {repository.keyFeatures?.length && <DetailSection id="features" index={String(4 + presentationOffset).padStart(2, "0")} title="Features"><div className="workspace-feature-grid">{repository.keyFeatures.map((feature) => <div key={feature}><Check aria-hidden="true" /> {feature}</div>)}</div></DetailSection>}
+            {repository.role && <DetailSection id="role" index={String(5 + presentationOffset).padStart(2, "0")} title="Role"><div className="workspace-role-note">{repository.role}</div></DetailSection>}
+            <DetailSection id="architecture" index={String(6 + presentationOffset).padStart(2, "0")} title="Architecture"><p>Architecture details are represented by the supplied {repository.technologies.join(", ")} stack.</p></DetailSection>
+            <DetailSection id="technologies" index={String(7 + presentationOffset).padStart(2, "0")} title="Technologies"><div className="workspace-topic-row">{repository.technologies.map((technology) => <span className="workspace-topic" key={technology}>{technology}</span>)}</div></DetailSection>
+            {repository.screens?.length && <DetailSection id="screens" index={String(8 + presentationOffset).padStart(2, "0")} title="Screens"><ScreenshotGallery screens={repository.screens} projectTitle={repository.title} /></DetailSection>}
+            {repository.videoUrl && <DetailSection id="demo" index={String(9 + presentationOffset).padStart(2, "0")} title="Demo"><div className="workspace-inline-video"><div><span className="workspace-video-status">internal viewer</span><h3>{repository.title} demo · YouTube</h3><p>Open the responsive demo viewer without leaving the portfolio.</p></div><button type="button" className="workspace-button" onClick={() => setVideoOpen(true)}><Play aria-hidden="true" /> Watch demo</button></div></DetailSection>}
+            <DetailSection id="links" index={String(10 + presentationOffset).padStart(2, "0")} title="Links"><div className="workspace-link-list">{repository.storeUrl && <a href={repository.storeUrl} target="_blank" rel="noreferrer"><Store aria-hidden="true" /> Play Store <ExternalLink aria-hidden="true" /><span>{repository.storeUrl}</span></a>}{repository.githubUrl && <a href={repository.githubUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" /> GitHub <ExternalLink aria-hidden="true" /><span>{repository.githubUrl}</span></a>}</div></DetailSection>
             <div className="workspace-detail__footer"><div><strong>Have a product to build?</strong><span>Open a collaboration and start the next repository.</span></div><WorkspaceActionButton asChild><a href="/#collaboration"><Plus aria-hidden="true" /> Open a collaboration</a></WorkspaceActionButton></div>
           </article>
 

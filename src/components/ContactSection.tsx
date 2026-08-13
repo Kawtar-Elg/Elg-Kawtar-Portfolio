@@ -3,38 +3,42 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import MagneticButton from "./MagneticButton";
 import { Button } from "./ui/button";
-import { Mail, Github, Linkedin, Send, CheckCircle2 } from "lucide-react";
+import { AlertCircle, Mail, Github, Linkedin, Send, CheckCircle2 } from "lucide-react";
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setError("");
+
     try {
       const formData = new FormData(e.currentTarget);
       const data = {
         name: formData.get("name"),
         email: formData.get("email"),
-        subject: formData.get("subject"),
+        projectType: formData.get("subject"),
         message: formData.get("message"),
       };
 
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        setIsSuccess(true);
-        (e.target as HTMLFormElement).reset();
-        setTimeout(() => setIsSuccess(false), 5000);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+      const responseBody = (await response.json().catch(() => null)) as { error?: string } | null;
+      if (!response.ok) throw new Error(responseBody?.error ?? "Something went wrong. Please try again or contact me directly by email.");
+
+      setIsSuccess(true);
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (submissionError) {
+      console.error("Error submitting form:", submissionError);
+      setError(submissionError instanceof Error ? submissionError.message : "Something went wrong. Please try again or contact me directly by email.");
     } finally {
       setIsSubmitting(false);
     }
@@ -147,8 +151,10 @@ const ContactSection = () => {
                 ></textarea>
               </div>
 
-              <Button 
-                type="submit" 
+              {error && <p role="alert" className="flex items-center gap-2 text-sm text-destructive"><AlertCircle className="h-4 w-4" /> {error}</p>}
+
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full rounded-xl h-12 text-base transition-all"
               >
