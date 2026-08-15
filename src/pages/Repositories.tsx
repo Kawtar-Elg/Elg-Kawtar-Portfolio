@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import WorkspaceShell, { WorkspaceHeader, WorkspaceActionButton } from "@/components/workspace/WorkspaceShell";
 import WorkspaceTabs from "@/components/workspace/WorkspaceTabs";
 import RepositoryExplorer from "@/components/workspace/RepositoryExplorer";
 
 export default function Repositories() {
-  return <WorkspaceShell><WorkspaceHeader path="repositories" action={<WorkspaceActionButton asChild><a href="/#collaboration">Start a collaboration</a></WorkspaceActionButton>} /><WorkspaceTabs /><RepositoryExplorer /></WorkspaceShell>;
+  return <WorkspaceShell><WorkspaceHeader path="repositories" action={<WorkspaceActionButton asChild><Link to="/#collaboration">Start a collaboration</Link></WorkspaceActionButton>} /><WorkspaceTabs /><RepositoryExplorer /></WorkspaceShell>;
 }

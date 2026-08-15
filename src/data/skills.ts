@@ -4,36 +4,54 @@
 
 export interface SkillDomain {
   title: string;
+  emoji: string;
   items: string[];
 }
 
 export const skillDomains: SkillDomain[] = [
   {
+    title: "Mobile",
+    emoji: "📱",
+    items: ["Kotlin", "Jetpack Compose", "Flutter", "Dart", "Android SDK"],
+  },
+  {
     title: "Architecture",
+    emoji: "🏗️",
     items: ["MVVM", "Clean Architecture", "MVI", "Repository Pattern"],
   },
   {
     title: "State Management",
+    emoji: "🔄",
     items: ["BLoC", "Riverpod", "Provider", "ViewModel"],
   },
   {
     title: "Backend & APIs",
+    emoji: "🔌",
     items: ["REST APIs", "Firebase", "JSON", "Retrofit", "Room"],
   },
   {
     title: "Data & Storage",
+    emoji: "🗄️",
     items: ["SQLite", "Room", "MySQL", "SharedPreferences", "Firebase Firestore"],
   },
   {
     title: "AI & ML",
+    emoji: "🤖",
     items: ["Gemini API", "ML Kit", "TensorFlow Lite", "Computer Vision"],
   },
   {
+    title: "Design",
+    emoji: "🎨",
+    items: ["Figma", "Design Systems", "Prototyping", "Wireframing", "UI Design"],
+  },
+  {
     title: "Quality & Testing",
+    emoji: "✅",
     items: ["JUnit", "Espresso", "Unit Testing", "UI Testing"],
   },
   {
     title: "DevOps & Deployment",
+    emoji: "🚀",
     items: ["Git", "GitHub", "CI/CD", "Google Play", "GitHub Actions"],
   },
 ];

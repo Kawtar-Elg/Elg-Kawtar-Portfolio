@@ -19,16 +19,24 @@ $sans: var(--font-sans);
   background: $canvas;
 }
 
+// This file loads after Tailwind, so any `display` declared here would beat
+// the `hidden` / `lg:*` utilities in the markup. The rail and the mobile bar
+// therefore own their own breakpoint instead of relying on those utilities.
 .workspace-rail {
   position: fixed;
   inset: 0 auto 0 0;
   z-index: 20;
+  display: none;
   width: 280px;
   flex-direction: column;
   justify-content: space-between;
   padding: 28px 24px 20px;
   background: $canvas;
   border-right: 1px solid $border;
+}
+
+@media (min-width: 1024px) {
+  .workspace-rail { display: flex; }
 }
 
 .workspace-rail__top,
@@ -99,15 +107,12 @@ $sans: var(--font-sans);
 .workspace-filebar__label { display: inline-flex; align-items: center; gap: 6px; color: $ink; }
 .workspace-filebar svg { width: 13px; height: 13px; color: $green-bright; }
 .workspace-filebar__meta:last-child { margin-left: auto; }
-.workspace-readme__body { display: grid; grid-template-columns: 1.6fr 1fr; gap: 34px; padding: 28px; }
+.workspace-readme__body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 34px; padding: 28px; }
 .workspace-code-label { margin: 0 0 10px; font-size: 10px; }
 .workspace-readme h2, .workspace-section-heading h2, .workspace-page-heading h1, .workspace-collaboration h2 { margin: 0; color: $ink; font-size: 25px; font-weight: 700; letter-spacing: -.04em; }
 .workspace-readme h2 { font-size: 31px; }
 .workspace-lede { max-width: 670px; margin: 16px 0 20px; color: $muted; font-size: 14px; line-height: 1.7; }
-.workspace-readme__build { padding-left: 30px; border-left: 1px solid $border; }
-.workspace-readme__build ol { display: flex; flex-direction: column; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; color: $muted; font-size: 12px; }
-.workspace-readme__build li { display: flex; gap: 12px; }
-.workspace-readme__build li span { color: $green-bright; font: 11px $mono; }
+.workspace-readme__aside { display: flex; min-width: 0; flex-direction: column; gap: 18px; padding-left: 30px; border-left: 1px solid $border; }
 .workspace-topic-row { display: flex; flex-wrap: wrap; gap: 7px; }
 .workspace-topic { display: inline-flex; align-items: center; min-height: 23px; padding: 4px 8px; border: 1px solid rgba(48,54,61,.9); border-radius: 5px; background: rgba(31,38,48,.66); color: $muted; font-size: 9px; line-height: 1; white-space: nowrap; }
 .workspace-topic:hover { border-color: $indigo; color: $ink; }
@@ -141,7 +146,7 @@ $sans: var(--font-sans);
 .workspace-repository-meta { margin-top: 3px; color: $muted; font-size: 9px; }
 .workspace-language-dot { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: #f1c40f; }
 .workspace-repository-tagline { margin: 1px 0 0; color: $ink; font-size: 12px; font-weight: 600; }
-.workspace-repository-description { display: -webkit-box; margin: 0; overflow: hidden; color: $muted; font-size: 11px; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.workspace-repository-description { display: -webkit-box; margin: 0; overflow: hidden; color: $muted; font-size: 11px; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; }
 .workspace-repository-footer { flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(48,54,61,.7); }
 .workspace-repository-action { gap: 5px; padding: 0; border: 0; background: none; color: $muted; font: 10px $mono; text-decoration: none; cursor: pointer; }
 .workspace-repository-action:hover, .workspace-repository-action--primary { color: $green-bright; }
@@ -261,7 +266,7 @@ $sans: var(--font-sans);
 .workspace-explorer-note svg { width: 14px; height: 14px; flex: 0 0 auto; margin-top: 2px; }
 .workspace-empty-state button { margin-left: auto; border: 0; background: none; color: $green-bright; font: 10px $mono; cursor: pointer; }
 
-.workspace-mobile-bar { position: sticky; top: 0; z-index: 25; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 64px; padding: 10px 16px; border-bottom: 1px solid $border; background: #000; }
+.workspace-mobile-bar { position: sticky; top: 0; z-index: 25; display: none; align-items: center; justify-content: space-between; gap: 14px; min-height: 64px; padding: 10px 16px; border-bottom: 1px solid $border; background: #000; }
 .workspace-mobile-bar__brand { display: flex; align-items: center; gap: 10px; color: $ink; text-decoration: none; }
 .workspace-mobile-bar__avatar { width: 35px; height: 35px; border: 1px solid $border; border-radius: 50%; object-fit: cover; }
 .workspace-mobile-bar__brand strong, .workspace-mobile-bar__brand small { display: block; }
@@ -380,6 +385,7 @@ $sans: var(--font-sans);
 .workspace-live-modal__fallback svg { width: 12px; height: 12px; }
 
 @media (max-width: 1023px) {
+  .workspace-mobile-bar { display: flex; }
   .workspace-main { margin-left: 0; }
   .workspace-main__inner { padding-right: 20px; padding-left: 20px; }
   .workspace-detail__filebar { margin-right: -20px; margin-left: -20px; padding-right: 20px; padding-left: 20px; }
@@ -397,7 +403,7 @@ $sans: var(--font-sans);
   .workspace-header-search kbd { display: none; }
   .workspace-readme__body, .workspace-dual-grid, .workspace-collaboration { grid-template-columns: 1fr; }
   .workspace-readme__body { gap: 24px; padding: 20px; }
-  .workspace-readme__build { padding-top: 22px; padding-left: 0; border-top: 1px solid $border; border-left: 0; }
+  .workspace-readme__aside { padding-top: 22px; padding-left: 0; border-top: 1px solid $border; border-left: 0; }
   .workspace-readme h2 { font-size: 25px; }
   .workspace-pipeline { padding: 14px 20px; }
   .workspace-pipeline__step:not(:last-child)::after { display: none; }
@@ -491,4 +497,529 @@ $sans: var(--font-sans);
 
 .workspace-app .experience-switcher__description {
   color: $muted;
+}
+
+// ═══════════════════════════════════════════════════════════
+// GitHub-inspired identity layer — hero, badges, terminal,
+// contribution graph, live repository cards and micro-motion.
+// ═══════════════════════════════════════════════════════════
+
+// ─── Ambient chrome ────────────────────────────────────────
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 60;
+  height: 2px;
+  background: linear-gradient(90deg, $green, $green-bright 45%, $indigo);
+  transform-origin: 0%;
+}
+
+.workspace-aurora {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(680px circle at 15% -5%, rgba(46, 160, 67, 0.1), transparent 60%),
+    radial-gradient(560px circle at 95% 12%, rgba(124, 124, 255, 0.09), transparent 62%),
+    radial-gradient(520px circle at 60% 100%, rgba(236, 72, 153, 0.05), transparent 60%);
+}
+
+// Lift content above the fixed aurora without touching the positioning of
+// the rail (fixed) or the mobile bar (sticky) — they already stack above it.
+.workspace-main { position: relative; z-index: 1; }
+
+.workspace-route-fallback {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: $canvas;
+  color: $muted;
+  font: 11px $mono;
+}
+.workspace-route-fallback__prompt { color: $green-bright; }
+
+// ─── 404 ───────────────────────────────────────────────────
+.workspace-404 { display: grid; min-height: 100vh; place-items: center; padding: 40px 20px; }
+.workspace-404__inner { width: min(100%, 560px); text-align: center; }
+.workspace-404__glyph {
+  display: inline-grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  place-items: center;
+  border: 1px solid $border;
+  border-radius: 12px;
+  background: $raised;
+  color: $green-bright;
+}
+.workspace-404__glyph svg { width: 24px; height: 24px; }
+.workspace-404 h1 { margin: 0 0 16px; color: $ink; font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
+.workspace-404__path {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 16px;
+  padding: 9px 14px;
+  border: 1px solid $border;
+  border-radius: 7px;
+  background: rgba(13, 17, 23, 0.6);
+  color: $muted;
+  font: 11px $mono;
+  overflow-wrap: anywhere;
+}
+.workspace-404__hint { max-width: 420px; margin: 0 auto 26px; color: $muted; font-size: 13px; line-height: 1.7; }
+.workspace-404__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.workspace-404__actions .workspace-button { text-decoration: none; }
+
+.workspace-stickers { position: absolute; inset: 0; pointer-events: none; }
+.workspace-sticker { position: absolute; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45)); }
+
+.text-reveal__word { display: inline-block; white-space: pre; }
+
+// ─── Rail + tabs additions ─────────────────────────────────
+.workspace-rail__moon { margin: 4px 0 0; color: $ink-subtle; font: 10px $mono; }
+.workspace-nav__emoji { font-size: 12px; line-height: 1; }
+.workspace-nav__item { position: relative; border-radius: 0 6px 6px 0; }
+
+.workspace-tab { position: relative; gap: 6px; }
+.workspace-tab__emoji { font-size: 11px; line-height: 1; }
+.workspace-tab--active::after { background: transparent; }
+.workspace-tab__underline { position: absolute; right: 10px; bottom: -1px; left: 10px; height: 2px; border-radius: 2px; background: $indigo; }
+
+.workspace-floating-cta-wrap { position: fixed; right: 22px; bottom: 22px; z-index: 15; }
+.workspace-floating-cta { position: static; display: inline-flex; }
+.workspace-floating-cta:hover { background: rgba(63, 185, 80, 0.95); }
+
+// ─── Shields-style badges ──────────────────────────────────
+.gh-badge {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 5px;
+  font: 500 10px $mono;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.gh-badge__label { padding: 6px 8px; background: #2b3138; color: #c9d1d9; }
+.gh-badge__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  background: var(--badge-accent, #2ea043);
+  color: #0b0f14;
+  font-weight: 600;
+}
+.gh-badge--solo .gh-badge__value { border-radius: 5px; }
+.gh-badge__emoji { font-size: 11px; }
+
+// ─── Hero / profile README ─────────────────────────────────
+.workspace-readme { position: relative; }
+.workspace-readme__identity { position: relative; display: flex; min-width: 0; flex-direction: column; gap: 16px; }
+.workspace-readme__identity > .workspace-code-label { margin: 0; }
+
+.workspace-readme__avatar-row { display: flex; align-items: center; gap: 14px; }
+.workspace-readme__avatar-wrap { position: relative; display: inline-grid; flex: 0 0 auto; place-items: center; }
+.workspace-readme__avatar {
+  position: relative;
+  z-index: 1;
+  width: 84px;
+  height: 84px;
+  border: 2px solid $border;
+  border-radius: 50%;
+  background: $raised;
+  object-fit: cover;
+}
+.workspace-readme__avatar-ring {
+  position: absolute;
+  inset: -6px;
+  border: 1px dashed rgba(63, 185, 80, 0.55);
+  border-radius: 50%;
+  animation: workspace-spin 14s linear infinite;
+}
+.workspace-readme__avatar-row .workspace-status-dot { right: 4px; bottom: 4px; z-index: 2; }
+.workspace-readme__handle { display: flex; min-width: 0; flex-direction: column; gap: 4px; }
+.workspace-readme__handle a { color: $green-bright; font: 600 13px $mono; text-decoration: none; }
+.workspace-readme__handle a:hover { text-decoration: underline; }
+.workspace-readme__handle span { color: $muted; font: 10px $mono; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.workspace-readme__title {
+  background: linear-gradient(100deg, #f0f6fc 20%, #7ee787 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.workspace-readme__role { margin: 0 0 10px; color: $ink; font-size: 15px; font-weight: 600; }
+.workspace-readme__bio {
+  margin: 0;
+  padding: 10px 14px;
+  border-left: 2px solid $green;
+  border-radius: 0 6px 6px 0;
+  background: rgba(46, 160, 67, 0.07);
+  color: #adbac7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.workspace-readme .workspace-lede { margin-bottom: 0; }
+
+.workspace-readme__badges { display: flex; flex-wrap: wrap; gap: 7px; }
+.workspace-readme__actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.workspace-readme__actions .workspace-button { text-decoration: none; }
+.workspace-button--github { border-color: $border; background: #21262d; color: $ink; }
+.workspace-button--github:hover { border-color: $ink-subtle; background: #30363d; }
+.workspace-button svg { transition: transform 0.25s ease; }
+.workspace-button:hover svg { transform: translateX(1px) rotate(-8deg); }
+
+.workspace-readme__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.workspace-readme__fact {
+  display: grid;
+  grid-template-columns: 18px auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid $border;
+  border-radius: 7px;
+  background: rgba(13, 17, 23, 0.55);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.workspace-readme__fact:hover { border-color: rgba(63, 185, 80, 0.5); transform: translateY(-2px); }
+.workspace-readme__fact-emoji { font-size: 14px; line-height: 1; }
+.workspace-readme__fact-label { color: $muted; font: 9px $mono; letter-spacing: 0.06em; text-transform: uppercase; }
+.workspace-readme__fact-value { min-width: 0; overflow: hidden; color: $ink; font: 11px $mono; text-overflow: ellipsis; white-space: nowrap; }
+
+.workspace-readme__stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.workspace-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: linear-gradient(160deg, rgba(31, 38, 48, 0.8), rgba(13, 17, 23, 0.6));
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.workspace-stat:hover { border-color: rgba(124, 124, 255, 0.55); transform: translateY(-2px); }
+.workspace-stat__emoji { font-size: 13px; line-height: 1; }
+.workspace-stat__value { color: $ink; font: 700 22px $mono; letter-spacing: -0.03em; }
+.workspace-stat__label { color: $muted; font: 9px $mono; letter-spacing: 0.05em; }
+
+.workspace-readme__languages .workspace-code-label { margin-bottom: 8px; }
+.workspace-readme__note { margin: 10px 0 0; color: $ink-subtle; font: 9px $mono; line-height: 1.6; }
+
+.workspace-readme__quicklinks { display: flex; flex-direction: column; gap: 7px; }
+.workspace-readme__quicklinks a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid $border;
+  border-radius: 7px;
+  color: $muted;
+  font: 10px $mono;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.workspace-readme__quicklinks a:hover { border-color: $green; color: $green-bright; }
+.workspace-readme__quicklinks svg { width: 13px; height: 13px; flex: 0 0 auto; color: $green-bright; }
+
+.workspace-filebar__live { display: inline-flex; align-items: center; gap: 5px; color: $green-bright; }
+.workspace-filebar__live svg { width: 11px; height: 11px; }
+
+@keyframes workspace-spin { to { transform: rotate(360deg); } }
+
+// ─── Language bar ──────────────────────────────────────────
+.workspace-langbar__track { display: flex; overflow: hidden; width: 100%; height: 9px; border-radius: 99px; background: $raised; }
+.workspace-langbar__segment { height: 100%; }
+.workspace-langbar__legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 12px 0 0; padding: 0; list-style: none; }
+.workspace-langbar__legend li { display: inline-flex; align-items: center; gap: 6px; color: $muted; font: 10px $mono; }
+.workspace-langbar__legend strong { color: $ink; font-weight: 500; }
+.workspace-langbar__dot { width: 8px; height: 8px; border-radius: 50%; }
+
+// ─── Terminal ──────────────────────────────────────────────
+.workspace-terminal { overflow: hidden; border: 1px solid $border; border-radius: 9px; background: #05080c; }
+.workspace-terminal__bar { display: flex; align-items: center; gap: 10px; padding: 9px 11px; border-bottom: 1px solid $border; background: #0d1117; }
+.workspace-terminal__lights { display: inline-flex; gap: 5px; }
+.workspace-terminal__lights span { width: 8px; height: 8px; border-radius: 50%; background: #f85149; }
+.workspace-terminal__lights span:nth-child(2) { background: #d29922; }
+.workspace-terminal__lights span:nth-child(3) { background: $green-bright; }
+.workspace-terminal__title { display: inline-flex; min-width: 0; align-items: center; gap: 6px; overflow: hidden; color: $muted; font: 9px $mono; text-overflow: ellipsis; white-space: nowrap; }
+.workspace-terminal__title svg { width: 12px; height: 12px; flex: 0 0 auto; }
+.workspace-terminal__rerun {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  place-items: center;
+  border: 1px solid $border;
+  border-radius: 5px;
+  background: none;
+  color: $muted;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.3s ease;
+}
+.workspace-terminal__rerun:hover { border-color: $green; color: $green-bright; transform: rotate(90deg); }
+.workspace-terminal__rerun svg { width: 12px; height: 12px; }
+
+.workspace-terminal__tabs { display: flex; gap: 4px; overflow-x: auto; padding: 8px 10px 0; scrollbar-width: none; }
+.workspace-terminal__tabs::-webkit-scrollbar { display: none; }
+.workspace-terminal__tab {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: none;
+  color: $ink-subtle;
+  font: 9px $mono;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.workspace-terminal__tab:hover { color: $ink; }
+.workspace-terminal__tab--active { border-color: rgba(63, 185, 80, 0.4); background: rgba(46, 160, 67, 0.14); color: $green-bright; }
+
+.workspace-terminal__body { min-height: 152px; padding: 12px 14px 16px; font: 11px $mono; line-height: 1.85; }
+.workspace-terminal__command { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 6px; color: $ink; word-break: break-word; }
+.workspace-terminal__prompt { color: $green-bright; }
+.workspace-terminal__cursor { display: inline-block; width: 7px; height: 14px; background: $green-bright; animation: workspace-blink 1s step-end infinite; }
+.workspace-terminal__line { margin: 0; overflow-wrap: anywhere; }
+.workspace-terminal__line--ok { color: $green-bright; }
+.workspace-terminal__line--accent { color: #a5d6ff; }
+.workspace-terminal__line--muted { color: $ink-subtle; }
+.workspace-terminal__line--plain { color: $muted; }
+
+@keyframes workspace-blink { 50% { opacity: 0; } }
+
+// ─── Live pill ─────────────────────────────────────────────
+.workspace-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border: 1px solid $border;
+  border-radius: 999px;
+  color: $muted;
+  font: 9px $mono;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.workspace-live-pill svg { width: 11px; height: 11px; }
+.workspace-live-pill--on { border-color: rgba(63, 185, 80, 0.45); color: $green-bright; }
+.workspace-live-pill--on svg { animation: workspace-pulse 2.4s ease-in-out infinite; }
+
+@keyframes workspace-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+
+// ─── Activity: contribution grid + commit line ─────────────
+.workspace-activity-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 16px 0 4px; }
+.workspace-activity-stat { display: flex; flex-direction: column; gap: 2px; padding: 10px; border: 1px solid $border; border-radius: 7px; background: rgba(13, 17, 23, 0.5); }
+.workspace-activity-stat > span:first-child { font-size: 12px; line-height: 1; }
+.workspace-activity-stat__value { color: $ink; font: 700 17px $mono; }
+.workspace-activity-stat__label { color: $muted; font: 9px $mono; }
+
+.workspace-contrib { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5px; padding: 18px 0 10px; }
+.workspace-contrib__column { display: flex; min-width: 0; flex-direction: column; gap: 5px; }
+.workspace-contrib__cells { display: flex; flex-direction: column-reverse; gap: 4px; }
+.workspace-contrib__cell { display: block; width: 100%; height: 12px; border-radius: 3px; background: #161b22; }
+.workspace-contrib__cell--l1 { background: rgba(46, 160, 67, 0.32); }
+.workspace-contrib__cell--l2 { background: rgba(46, 160, 67, 0.52); }
+.workspace-contrib__cell--l3 { background: rgba(63, 185, 80, 0.78); }
+.workspace-contrib__cell--l4 { background: #56d364; }
+.workspace-contrib__label { color: $ink-subtle; font: 8px $mono; text-align: center; }
+.workspace-contrib__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid $border;
+  color: $muted;
+  font: 9px $mono;
+}
+.workspace-contrib__scale { display: inline-flex; align-items: center; gap: 4px; }
+.workspace-contrib__scale i { width: 10px; height: 10px; border-radius: 3px; background: #161b22; }
+
+.workspace-commitline { padding-top: 16px; }
+.workspace-commitline ol { display: flex; flex-direction: column; margin: 10px 0 0; padding: 0; list-style: none; }
+.workspace-commitline li { position: relative; display: flex; align-items: center; gap: 9px; padding: 9px 0 9px 22px; border-left: 1px solid $border; color: $muted; font: 10px $mono; }
+.workspace-commitline li:last-child { border-left-color: transparent; }
+.workspace-commitline__node {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid $border;
+  border-radius: 50%;
+  background: $canvas;
+  color: $green-bright;
+  transform: translate(-50%, -50%);
+}
+.workspace-commitline__node svg { width: 11px; height: 11px; }
+.workspace-commitline a { color: $ink; text-decoration: none; }
+.workspace-commitline a:hover { color: $green-bright; text-decoration: underline; }
+.workspace-commitline__lang { display: inline-flex; align-items: center; gap: 5px; }
+.workspace-commitline__lang i { width: 8px; height: 8px; border-radius: 50%; }
+.workspace-commitline time { margin-left: auto; color: $ink-subtle; white-space: nowrap; }
+
+// ─── GitHub achievements ───────────────────────────────────
+.workspace-gh-achievements { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+.workspace-gh-achievements > * { display: flex; min-width: 0; }
+.workspace-gh-achievement {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: rgba(124, 124, 255, 0.06);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.workspace-gh-achievement:hover { border-color: rgba(124, 124, 255, 0.6); transform: translateY(-2px); }
+.workspace-gh-achievement__medal {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border: 1px solid rgba(124, 124, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(13, 17, 23, 0.7);
+  font-size: 15px;
+}
+.workspace-gh-achievement strong { display: block; color: $ink; font: 600 11px $mono; }
+.workspace-gh-achievement small { display: block; margin-top: 2px; color: $muted; font: 9px $mono; }
+
+// ─── Live repository grid ──────────────────────────────────
+.workspace-gh-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.workspace-gh-grid > * { display: flex; min-width: 0; }
+.workspace-gh-repo {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid $border;
+  border-radius: 9px;
+  background: rgba(22, 27, 34, 0.8);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.workspace-gh-repo:hover { border-color: rgba(63, 185, 80, 0.6); background: rgba(31, 38, 48, 0.85); }
+.workspace-gh-repo__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.workspace-gh-repo__name { min-width: 0; overflow: hidden; color: $green-bright; font: 600 11px $mono; text-overflow: ellipsis; white-space: nowrap; }
+.workspace-gh-repo__arrow { width: 13px; height: 13px; flex: 0 0 auto; color: $ink-subtle; transition: transform 0.2s ease, color 0.2s ease; }
+.workspace-gh-repo:hover .workspace-gh-repo__arrow { color: $green-bright; transform: translate(2px, -2px); }
+.workspace-gh-repo__desc {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: $muted;
+  font-size: 11px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.workspace-gh-repo__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: auto; padding-top: 4px; color: $muted; font: 9px $mono; }
+.workspace-gh-repo__meta span { display: inline-flex; align-items: center; gap: 4px; }
+.workspace-gh-repo__meta svg { width: 11px; height: 11px; }
+.workspace-gh-repo__lang i { width: 8px; height: 8px; border-radius: 50%; }
+.workspace-gh-repo__date { margin-left: auto; color: $ink-subtle; }
+.workspace-gh-grid__all { margin-top: 14px; }
+
+// ─── Repository card upgrades ──────────────────────────────
+.workspace-pinned-grid > * { display: flex; min-width: 0; }
+.workspace-pinned-grid > * > .workspace-repository-card { flex: 1; }
+.workspace-pinned-grid__wide { grid-column: span 2; }
+
+.workspace-repository-card { position: relative; will-change: transform; }
+.workspace-repository-card--tilt { transform-style: preserve-3d; }
+.workspace-repository-card__glow {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(340px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(63, 185, 80, 0.13), transparent 62%);
+  transition: opacity 0.28s ease;
+}
+.workspace-repository-card:hover .workspace-repository-card__glow { opacity: 1; }
+.workspace-repository-card:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38); }
+.workspace-repository-card__content,
+.workspace-repository-card__media { position: relative; z-index: 1; }
+.workspace-repository-card__heading > div { min-width: 0; flex: 1; }
+.workspace-repo-visibility {
+  align-self: flex-start;
+  padding: 2px 7px;
+  border: 1px solid $border;
+  border-radius: 999px;
+  color: $muted;
+  font: 8px $mono;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.workspace-repo-glyph { transition: transform 0.25s ease, border-color 0.25s ease; }
+.workspace-repository-card:hover .workspace-repo-glyph { border-color: $green; transform: rotate(-6deg) scale(1.06); }
+.workspace-repository-signals { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: $muted; font: 9px $mono; }
+.workspace-repository-signal { display: inline-flex; align-items: center; gap: 4px; color: #e3b341; }
+.workspace-repository-signal svg { width: 11px; height: 11px; }
+.workspace-repository-signal--muted { color: $ink-subtle; }
+.workspace-repository-action svg { transition: transform 0.2s ease; }
+.workspace-repository-action:hover svg { transform: translate(1px, -1px); }
+.workspace-language-dot { background: #6e7681; }
+.workspace-topic { transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease; }
+.workspace-topic--skill:hover { border-color: rgba(63, 185, 80, 0.55); background: rgba(46, 160, 67, 0.12); color: $green-bright; }
+.workspace-repository-card:hover .workspace-topic { border-color: rgba(124, 124, 255, 0.35); }
+
+// ─── Issue labels ──────────────────────────────────────────
+.workspace-issue-labels { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.workspace-issue-label { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border: 1px solid; border-radius: 999px; font: 9px $mono; }
+.workspace-issue-label--mobile { border-color: rgba(169, 123, 255, 0.5); background: rgba(169, 123, 255, 0.12); color: #d2b7ff; }
+.workspace-issue-label--design { border-color: rgba(247, 120, 186, 0.5); background: rgba(247, 120, 186, 0.12); color: #ffb7dd; }
+.workspace-issue-label--ai { border-color: rgba(124, 124, 255, 0.5); background: rgba(124, 124, 255, 0.12); color: #b9b9ff; }
+.workspace-issue-label--open { border-color: rgba(63, 185, 80, 0.5); background: rgba(46, 160, 67, 0.14); color: #7ee787; }
+
+// ─── Responsive ────────────────────────────────────────────
+@media (max-width: 1279px) {
+  .workspace-gh-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1023px) {
+  .workspace-gh-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace-readme__title { font-size: 27px; }
+}
+
+@media (max-width: 767px) {
+  .workspace-aurora { background: radial-gradient(420px circle at 20% 0%, rgba(46, 160, 67, 0.1), transparent 60%); }
+  .workspace-pinned-grid__wide { grid-column: auto; }
+  .workspace-readme__avatar { width: 68px; height: 68px; }
+  .workspace-readme__facts,
+  .workspace-readme__stats { grid-template-columns: 1fr; }
+  .workspace-readme__actions > * { flex: 1 1 140px; }
+  .workspace-readme__actions > * > span,
+  .workspace-readme__actions .workspace-button { width: 100%; }
+  .workspace-activity-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace-contrib { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+  .workspace-gh-achievements { grid-template-columns: 1fr; }
+  .workspace-gh-grid { grid-template-columns: 1fr; }
+  .workspace-commitline li { flex-wrap: wrap; }
+  .workspace-commitline time { margin-left: 0; }
+  .workspace-floating-cta-wrap { right: 14px; bottom: 14px; }
+}
+
+@media (max-width: 480px) {
+  .workspace-contrib { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .workspace-readme__handle a { font-size: 12px; }
+  .workspace-terminal__body { font-size: 10px; }
 }

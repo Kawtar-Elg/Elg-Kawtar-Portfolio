@@ -3,29 +3,47 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { ExperienceModeProvider, useExperienceMode } from "./context/ExperienceModeContext";
 import Index from "./pages/Index";
-import Repositories from "./pages/Repositories";
-import RepositoryDetail from "./pages/RepositoryDetail";
-import DesignerExperience from "./pages/DesignerExperience";
-import NotFound from "./pages/NotFound";
+
+// The secondary routes and the whole designer experience are split out of the
+// initial bundle — the overview is what visitors land on.
+const Repositories = lazy(() => import("./pages/Repositories"));
+const RepositoryDetail = lazy(() => import("./pages/RepositoryDetail"));
+const DesignerExperience = lazy(() => import("./pages/DesignerExperience"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
+
+function RouteFallback() {
+  return (
+    <div className="workspace-route-fallback" role="status" aria-live="polite">
+      <span className="workspace-route-fallback__prompt">&gt;_</span> loading workspace…
+    </div>
+  );
+}
 
 function ModeRouter() {
   const { mode } = useExperienceMode();
 
   if (mode === "designer") {
-    return <DesignerExperience />;
+    return (
+      <Suspense fallback={<RouteFallback />}>
+        <DesignerExperience />
+      </Suspense>
+    );
   }
 
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/repositories" element={<Repositories />} />
-      <Route path="/repositories/:repositoryId" element={<RepositoryDetail />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Suspense fallback={<RouteFallback />}>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/repositories" element={<Repositories />} />
+        <Route path="/repositories/:repositoryId" element={<RepositoryDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 

@@ -117,7 +117,7 @@ export default function CollaborationForm() {
 
   return (
     <section id="collaboration" className="workspace-collaboration" aria-labelledby="collaboration-title">
-      <div className="workspace-collaboration__intro"><p className="workspace-code-label">/new-collaboration</p><h2 id="collaboration-title">Open an issue.</h2><p>Have an idea worth building? Tell me what you&apos;re working on and let&apos;s shape a mobile experience people actually want to use.</p><div className="workspace-collaboration__template">template: collaboration<br />labels: mobile, ui/ux, product<br />assignee: kawtar-elg</div></div>
+      <div className="workspace-collaboration__intro"><p className="workspace-code-label">/new-collaboration</p><h2 id="collaboration-title">🐛 Open an issue.</h2><p>Have an idea worth building? Tell me what you&apos;re working on and let&apos;s shape a mobile experience people actually want to use.</p><div className="workspace-issue-labels" aria-label="Issue labels"><span className="workspace-issue-label workspace-issue-label--mobile">📱 mobile</span><span className="workspace-issue-label workspace-issue-label--design">🎨 ui/ux</span><span className="workspace-issue-label workspace-issue-label--ai">🤖 ai</span><span className="workspace-issue-label workspace-issue-label--open">✅ open</span></div><div className="workspace-collaboration__template">template: collaboration<br />labels: mobile, ui/ux, product<br />assignee: kawtar-elg</div></div>
       <form className="workspace-collaboration__form" onSubmit={handleSubmit} noValidate>
         <div className="workspace-filebar"><span>new issue / collaboration.md</span><span>write</span></div>
         <div className="workspace-honeypot" aria-hidden="true">

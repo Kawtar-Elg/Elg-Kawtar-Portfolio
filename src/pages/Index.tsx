@@ -11,6 +11,8 @@ import AchievementsPanel from "@/components/workspace/AchievementsPanel";
 import TechStackTable from "@/components/workspace/TechStackTable";
 import CapabilityAccordion from "@/components/workspace/CapabilityAccordion";
 import CollaborationForm from "@/components/workspace/CollaborationForm";
+import GitHubReposPanel from "@/components/workspace/GitHubReposPanel";
+import { Reveal } from "@/components/motion/Reveal";
 import VideoModal from "@/components/workspace/VideoModal";
 import LiveSiteModal from "@/components/workspace/LiveSiteModal";
 import { getRepositoryRecords, type RepositoryRecord } from "@/lib/repository-utils";
@@ -46,9 +48,10 @@ export default function Index() {
       <div className="workspace-overview-stack">
         <ProfileReadme />
         <section id="repositories" aria-labelledby="pinned-title" className="workspace-section">
-          <div className="workspace-section-heading"><div><p className="workspace-code-label">/repositories</p><h2 id="pinned-title">Pinned repositories</h2><p>Selected product work, presented as live project evidence.</p></div><Link to="/repositories" className="workspace-inline-link">View all repositories <ArrowUpRight aria-hidden="true" /></Link></div>
-          <div className="workspace-pinned-grid">{featured.map((repository, index) => <RepositoryCard key={repository.id} repository={repository} layout={index === 0 ? "featured" : index === 1 ? "featured" : "compact"} previewMode="phone-pair" onWatchDemo={setVideoRepository} onOpenLiveSite={repository.title === "Robotics Club CMC" ? setLiveRepository : undefined} />)}</div>
+          <div className="workspace-section-heading"><div><p className="workspace-code-label">/repositories</p><h2 id="pinned-title">📌 Pinned repositories</h2><p>Selected product work, presented as live project evidence.</p></div><Link to="/repositories" className="workspace-inline-link">View all repositories <ArrowUpRight aria-hidden="true" /></Link></div>
+          <div className="workspace-pinned-grid">{featured.map((repository, index) => <Reveal key={repository.id} delay={index * 0.06} className={index === 0 ? "workspace-pinned-grid__wide" : undefined}><RepositoryCard repository={repository} layout={index === 0 ? "featured" : "compact"} previewMode="phone-pair" onWatchDemo={setVideoRepository} onOpenLiveSite={repository.title === "Robotics Club CMC" ? setLiveRepository : undefined} /></Reveal>)}</div>
         </section>
+        <GitHubReposPanel />
         <div className="workspace-dual-grid"><ActivityGraph /><AchievementsPanel /></div>
         <TechStackTable />
         <CapabilityAccordion repositories={repositories} />

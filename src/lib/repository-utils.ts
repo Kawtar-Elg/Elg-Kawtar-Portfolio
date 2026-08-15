@@ -12,7 +12,8 @@ export interface RepositoryRecord extends Project {
   deviceType?: "iphone" | "android";
 }
 
-const featuredIds = new Set([12, 6, 7, 8]);
+// Pinned on the overview, in the order they appear in `projects`.
+const featuredIds = new Set([1, 12, 6, 7, 8]);
 
 const topicAliases: Record<string, string[]> = {
   kotlin: ["kotlin", "android", "mobile-development"],

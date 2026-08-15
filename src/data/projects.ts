@@ -3,7 +3,6 @@
 // ═══════════════════════════════════════════════════════════
 
 import rbtc from "@/assets/rbtc.png";
-import project1 from "@/assets/1.png";
 import portfoliopic from "@/assets/portfoliopic.png";
 import appvers from "@/assets/appvers.png";
 import appvers2 from "@/assets/appvers (2).png";
@@ -94,6 +93,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 1,
+    title: "Robotics Club CMC",
+    tagline: "Student Robotics Community Platform",
+    category: "Web",
+    description:
+      "Website for Robotics Club CMC — a student community passionate about robotics, AI, and innovation.",
+    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    image: rbtc,
+    liveUrl: "https://robotics-cmc.tech/",
+    githubUrl: "https://github.com/Kawtar-Elg/Robotics_Club_WebSite",
+  },
+  {
     id: 12,
     title: "KEYCARE",
     tagline: "AI-Powered Keyboard for Better Words",
@@ -126,7 +137,6 @@ export const projects: Project[] = [
     logo: keycareLogo,
     liveUrl: "https://key-care.app/",
     videoUrl: "https://www.youtube.com/watch?v=r2qN9kBoU8w",
-    githubUrl: "https://github.com/Kawtar-Elg",
   },
   {
     id: 6,
@@ -150,7 +160,6 @@ export const projects: Project[] = [
     logo: autobrainLogo,
     storeUrl: "https://play.google.com/store/apps/details?id=com.app.autobrain",
     videoUrl: "https://www.youtube.com/watch?v=-XepwjbQ1HY",
-    githubUrl: "https://github.com/Kawtar-Elg",
   },
   {
     id: 7,
@@ -169,7 +178,7 @@ export const projects: Project[] = [
     image: dashlyImage,
     screens: [dashly1, dashly2, dashly3, dashly4, dashly5],
     logo: dashlyLogo,
-    githubUrl: "https://github.com/Kawtar-Elg/Dashly.git",
+    githubUrl: "https://github.com/Kawtar-Elg/Dashly",
   },
   {
     id: 9,
@@ -231,30 +240,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Kawtar-Elg/Taxi-Hub",
   },
   {
-    id: 2,
-    title: "Alf-Layla",
-    tagline: "Luxury Accommodation Booking",
-    category: "Web",
-    description:
-      "A simple, modern, and intuitive digital solution that allows users to book luxury accommodations in just a few clicks.",
-    technologies: ["HTML", "CSS", "Bootstrap", "Python"],
-    image: project1,
-    liveUrl: "https://alf-layla.great-site.net",
-    githubUrl: "https://github.com/Kawtar-Elg/Alf-Laylaa.git",
-  },
-  {
-    id: 1,
-    title: "Robotics Club CMC",
-    tagline: "Student Robotics Community Platform",
-    category: "Web",
-    description:
-      "Website for Robotics Club CMC — a student community passionate about robotics, AI, and innovation.",
-    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    image: rbtc,
-    liveUrl: "https://robotics-cmc.tech/",
-    githubUrl: "https://github.com/Kawtar-Elg",
-  },
-  {
     id: 3,
     title: "Portfolio Website",
     tagline: "Personal Developer Portfolio",
@@ -264,7 +249,7 @@ export const projects: Project[] = [
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     image: portfoliopic,
     liveUrl: "https://elg-kawtar-portfolio.vercel.app/",
-    githubUrl: "https://github.com/Kawtar-Elg/Elg-Kawtar-Portfolio.git",
+    githubUrl: "https://github.com/Kawtar-Elg/Elg-Kawtar-Portfolio",
   },
   {
     id: 4,
@@ -274,7 +259,6 @@ export const projects: Project[] = [
     description: "Gérez votre hamam en toute simplicité ! A comprehensive management application for small business operations.",
     technologies: ["Kotlin", "Flutter", "React"],
     image: appvers,
-    githubUrl: "https://github.com/Kawtar-Elg",
   },
   {
     id: 5,
@@ -284,7 +268,6 @@ export const projects: Project[] = [
     description: "Gérez votre hamam en toute simplicité ! Desktop version with Python backend.",
     technologies: ["Python", "Flask", "Tkinter"],
     image: appvers2,
-    githubUrl: "https://github.com/Kawtar-Elg",
   },
 ];
 

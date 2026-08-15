@@ -9,7 +9,7 @@ export default function CapabilityAccordion({ repositories }: { repositories: Re
 
   return (
     <section className="workspace-panel workspace-capability-panel" aria-labelledby="capabilities-title">
-      <div className="workspace-section-heading"><div><p className="workspace-code-label">/skills</p><h2 id="capabilities-title">What I build</h2><p>Capabilities backed by the technologies and projects already in this workspace.</p></div></div>
+      <div className="workspace-section-heading"><div><p className="workspace-code-label">/skills</p><h2 id="capabilities-title">🛠️ What I build</h2><p>Capabilities backed by the technologies and projects already in this workspace.</p></div></div>
       <div className="workspace-capability-list">
         {capabilities.map((capability) => {
           const isOpen = capability.id === openId;
